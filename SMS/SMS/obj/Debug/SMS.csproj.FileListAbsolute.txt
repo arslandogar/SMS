@@ -1,0 +1,18 @@
+E:\Books\Object Oriented Analysis\SMS\SMS\bin\Debug\SMS.exe.config
+E:\Books\Object Oriented Analysis\SMS\SMS\bin\Debug\SMS.exe
+E:\Books\Object Oriented Analysis\SMS\SMS\bin\Debug\SMS.pdb
+E:\Books\Object Oriented Analysis\SMS\SMS\obj\Debug\SMS.csprojResolveAssemblyReference.cache
+E:\Books\Object Oriented Analysis\SMS\SMS\obj\Debug\SMS.frmLogin.resources
+E:\Books\Object Oriented Analysis\SMS\SMS\obj\Debug\SMS.Properties.Resources.resources
+E:\Books\Object Oriented Analysis\SMS\SMS\obj\Debug\SMS.csproj.GenerateResource.Cache
+E:\Books\Object Oriented Analysis\SMS\SMS\obj\Debug\SMS.exe
+E:\Books\Object Oriented Analysis\SMS\SMS\obj\Debug\SMS.pdb
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\bin\Debug\SMS.exe.config
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\obj\Debug\SMS.exe
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\obj\Debug\SMS.pdb
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\bin\Debug\SMS.exe
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\bin\Debug\SMS.pdb
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\obj\Debug\SMS.csprojResolveAssemblyReference.cache
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLogin.resources
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\obj\Debug\SMS.Properties.Resources.resources
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS\SMS\obj\Debug\SMS.csproj.GenerateResource.Cache

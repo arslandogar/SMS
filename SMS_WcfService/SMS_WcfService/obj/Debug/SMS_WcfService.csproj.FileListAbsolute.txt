@@ -1,0 +1,1 @@
+E:\Books\Object Oriented Analysis\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.csprojResolveAssemblyReference.cache
