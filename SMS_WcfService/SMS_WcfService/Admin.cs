@@ -8,6 +8,7 @@ namespace SMS_WcfService
     public class Admin:Person
     {
         private string username;
+        private string password;
 
         public string Username
         {
@@ -19,6 +20,18 @@ namespace SMS_WcfService
             set
             {
                 username = value;
+            }
+        }
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
             }
         }
     }
