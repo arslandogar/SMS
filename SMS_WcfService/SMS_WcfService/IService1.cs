@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Drawing;
 
 namespace SMS_WcfService
 {
@@ -12,7 +13,14 @@ namespace SMS_WcfService
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        void sSetDefaultAdmin();
 
+        [OperationContract]
+        void sChangeLibrarian(string name, string cnic, string gender, string email, string mobile_no, string address, string date_of_birth, string joing_date, string employee_no);
+
+        [OperationContract]
+        bool sValidAdmin(string username, string password);
         [OperationContract]
         string GetData(int value);
 

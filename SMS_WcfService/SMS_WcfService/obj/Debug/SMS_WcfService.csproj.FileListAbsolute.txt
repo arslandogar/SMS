@@ -5,3 +5,5 @@ E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\bin\SMS_WcfService
 E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\bin\SMS_WcfService.pdb
 E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.dll
 E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.pdb
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.Properties.Resources.resources
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.csproj.GenerateResource.Cache

@@ -7,26 +7,26 @@ namespace SMS_WcfService
 {
     public class EmployeesDataClass
     {
-        private List<Teacher> teachers = new List<Teacher>();
+        private static List<Teacher> teachers = new List<Teacher>();
 
-        private Librarian librarian;
+        private static Librarian librarian = new Librarian();
 
-        public void addTeacher(Teacher t)
+        public static void addTeacher(Teacher t)
         {
 
         }
 
-        public List<Teacher> searchByCourse(string name)
+        public static List<Teacher> searchByCourse(string name)
         {
             return teachers;
         }
 
-        public void changeLibrarian(Librarian lb)
+        public static void changeLibrarian(Librarian lb)
         {
-
+            librarian = lb;
         }
 
-        public List<Teacher> Teachers
+        public static List<Teacher> Teachers
         {
             get
             {
@@ -39,7 +39,7 @@ namespace SMS_WcfService
             }
         }
 
-        public Librarian Librarian
+        public static Librarian Librarian
         {
             get
             {

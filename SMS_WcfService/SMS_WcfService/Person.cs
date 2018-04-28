@@ -12,6 +12,7 @@ namespace SMS_WcfService
         private string password;
         private string cnic;
         private string gender;
+        private string date_of_birth;
         private string email;
         private string mobile_no;
         private string address;
@@ -136,6 +137,19 @@ namespace SMS_WcfService
             set
             {
                 inbox = value;
+            }
+        }
+
+        public string Date_of_birth
+        {
+            get
+            {
+                return date_of_birth;
+            }
+
+            set
+            {
+                date_of_birth = value;
             }
         }
     }

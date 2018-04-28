@@ -7,6 +7,7 @@ namespace SMS_WcfService
 {
     public class Employee:Person
     {
+        private string employee_no;
         private string joining_date;
         private List<Attendance> attendances = new List<Attendance>();
 
@@ -25,6 +26,19 @@ namespace SMS_WcfService
             set
             {
                 joining_date = value;
+            }
+        }
+
+        public string Employee_no
+        {
+            get
+            {
+                return employee_no;
+            }
+
+            set
+            {
+                employee_no = value;
             }
         }
     }
