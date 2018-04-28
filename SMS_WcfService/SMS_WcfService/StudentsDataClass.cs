@@ -16,7 +16,7 @@ namespace SMS_WcfService
 
         public List<Student> searchByCourse(string name)
         {
-
+            return students;
         }
     }
 }

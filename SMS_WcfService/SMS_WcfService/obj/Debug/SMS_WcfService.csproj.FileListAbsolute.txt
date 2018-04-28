@@ -1,1 +1,7 @@
 E:\Books\Object Oriented Analysis\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.csprojResolveAssemblyReference.cache
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.csprojResolveAssemblyReference.cache
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\bin\SMS_WcfService.dll.config
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\bin\SMS_WcfService.dll
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\bin\SMS_WcfService.pdb
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.dll
+E:\School Management System\SMS\SMS_WcfService\SMS_WcfService\obj\Debug\SMS_WcfService.pdb

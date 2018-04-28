@@ -12,7 +12,7 @@ namespace SMS_WcfService
 
         public List<Attendance> addAttendance(Attendance A)
         {
-
+            return attendances;
         }
 
         public string Joining_date

@@ -18,7 +18,7 @@ namespace SMS_WcfService
 
         public List<Teacher> searchByCourse(string name)
         {
-
+            return teachers;
         }
 
         public void changeLibrarian(Librarian lb)

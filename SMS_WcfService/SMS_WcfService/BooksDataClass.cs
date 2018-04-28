@@ -16,12 +16,12 @@ namespace SMS_WcfService
 
         public List<Book> searchByAuthor(string author)
         {
-
+            return Books;
         }
 
         public List<Book> searchByName(string author)
         {
-
+            return Books;
         }
     }
 }
