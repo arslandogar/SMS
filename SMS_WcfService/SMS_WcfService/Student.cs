@@ -9,8 +9,8 @@ namespace SMS_WcfService
     {
         private string roll_no;
         private Parent parent;
-        private List<Attendance> attendances;
-        private List<Course> courses_enrolled;
+        private List<Attendance> attendances = new List<Attendance>();
+        private List<Course> courses_enrolled = new List<Course>();
 
         public void addAttendance(Attendance a)
         {
@@ -19,7 +19,7 @@ namespace SMS_WcfService
 
         public void addCourse(Course c)
         {
-
+            courses_enrolled.Add(c);
         }
 
         public string Roll_no

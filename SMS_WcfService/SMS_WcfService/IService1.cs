@@ -21,6 +21,12 @@ namespace SMS_WcfService
 
         [OperationContract]
         bool sValidAdmin(string username, string password);
+
+        [OperationContract]
+        void sAddParent(string name, string cnic, string contact, string childCnic);
+
+        [OperationContract]
+        void sAddStudent(string name, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address);
         [OperationContract]
         string GetData(int value);
 

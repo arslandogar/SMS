@@ -121,6 +121,9 @@
     <None Include="Web References\server\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Web References\server\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

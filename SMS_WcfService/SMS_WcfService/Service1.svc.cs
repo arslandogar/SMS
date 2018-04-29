@@ -30,6 +30,45 @@ namespace SMS_WcfService
             return composite;
         }
 
+        public void sAddParent(string name, string cnic, string contact, string childCnic)
+        {
+            Parent parent = new Parent();
+            parent.Name = name;
+            parent.Mobile_no = contact;
+            parent.Cnic = cnic;
+            foreach(Student s in StudentsDataClass.Students)
+            {
+                if(s.Cnic == childCnic)
+                {
+                    parent.Child = s;
+                    s.Parent = parent;
+                }
+            }
+        }
+
+        public void sAddStudent(string name, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address)
+        {
+            Student student = new Student();
+            student.Name = name;
+            student.Gender = gender;
+            student.Email = email;
+            student.Roll_no = roll_no;
+            student.Date_of_birth = date_of_birth;
+            student.Mobile_no = contact;
+            student.Address = address;
+            foreach(string courName in courseNames)
+            {
+                foreach(Course c in CoursesDataClass.Courses)
+                {
+                    if(courName == c.Title)
+                    {
+                        student.addCourse(c);
+                    }
+                }
+            }
+            StudentsDataClass.addStudent(student);
+        }
+
         public void sChangeLibrarian(string name, string cnic, string gender, string email, string mobile_no, string address, string date_of_birth, string joing_date, string employee_no)
         {
             Librarian librarian = new Librarian();

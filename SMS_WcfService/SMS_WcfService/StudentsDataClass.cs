@@ -9,14 +9,27 @@ namespace SMS_WcfService
     {
         private static List<Student> students = new List<Student>();
 
-        public void addStudent(Student s)
+        public static List<Student> Students
         {
+            get
+            {
+                return students;
+            }
 
+            set
+            {
+                students = value;
+            }
         }
 
-        public List<Student> searchByCourse(string name)
+        public static void addStudent(Student s)
         {
-            return students;
+            students.Add(s);
+        }
+
+        public static List<Student> searchByCourse(string name)
+        {
+            return Students;
         }
     }
 }
