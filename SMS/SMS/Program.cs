@@ -18,7 +18,7 @@ namespace SMS
             Application.SetCompatibleTextRenderingDefault(false);
             server.Service1 ser = new SMS.server.Service1();
             ser.sSetDefaultAdmin();
-            Application.Run(new frmAdminLogin());
+            Application.Run(frmMain.getInstance());
         }
     }
 }

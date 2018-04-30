@@ -96,6 +96,7 @@
             this.btnLogout.TabIndex = 22;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnSendMessages
             // 
@@ -399,7 +400,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
             this.Name = "frmAdminAddLibrarian";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

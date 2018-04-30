@@ -38,6 +38,30 @@
   <wsdl:message name="IService1_sAddStudent_OutputMessage">
     <wsdl:part name="parameters" element="tns:sAddStudentResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sValidLibrarian_InputMessage">
+    <wsdl:part name="parameters" element="tns:sValidLibrarian" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidLibrarian_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sValidLibrarianResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewAllBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewAllBooks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewAllBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewAllBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewBookByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewBookByName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewBookByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewBookByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewBookByAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewBookByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewBookByAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewBookByAuthorResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -70,6 +94,22 @@
     <wsdl:operation name="sAddStudent">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sAddStudent" message="tns:IService1_sAddStudent_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sAddStudentResponse" message="tns:IService1_sAddStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sValidLibrarian">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sValidLibrarian" message="tns:IService1_sValidLibrarian_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sValidLibrarianResponse" message="tns:IService1_sValidLibrarian_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewAllBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewAllBooks" message="tns:IService1_sViewAllBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewAllBooksResponse" message="tns:IService1_sViewAllBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewBookByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewBookByName" message="tns:IService1_sViewBookByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewBookByNameResponse" message="tns:IService1_sViewBookByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewBookByAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewBookByAuthor" message="tns:IService1_sViewBookByAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewBookByAuthorResponse" message="tns:IService1_sViewBookByAuthor_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -120,6 +160,42 @@
     </wsdl:operation>
     <wsdl:operation name="sAddStudent">
       <soap:operation soapAction="http://tempuri.org/IService1/sAddStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sValidLibrarian">
+      <soap:operation soapAction="http://tempuri.org/IService1/sValidLibrarian" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewAllBooks">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewAllBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewBookByName">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewBookByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewBookByAuthor">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewBookByAuthor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

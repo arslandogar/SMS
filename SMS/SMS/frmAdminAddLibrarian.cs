@@ -42,5 +42,12 @@ namespace SMS
                 MessageBox.Show("Librarian Added!");
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmMain temp = frmMain.getInstance();
+            temp.Show();
+            this.Close();
+        }
     }
 }

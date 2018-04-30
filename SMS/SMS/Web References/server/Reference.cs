@@ -39,6 +39,14 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sAddStudentOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sValidLibrarianOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewAllBooksOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewBookByNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewBookByAuthorOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
@@ -95,6 +103,18 @@ namespace SMS.server {
         
         /// <remarks/>
         public event sAddStudentCompletedEventHandler sAddStudentCompleted;
+        
+        /// <remarks/>
+        public event sValidLibrarianCompletedEventHandler sValidLibrarianCompleted;
+        
+        /// <remarks/>
+        public event sViewAllBooksCompletedEventHandler sViewAllBooksCompleted;
+        
+        /// <remarks/>
+        public event sViewBookByNameCompletedEventHandler sViewBookByNameCompleted;
+        
+        /// <remarks/>
+        public event sViewBookByAuthorCompletedEventHandler sViewBookByAuthorCompleted;
         
         /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
@@ -281,6 +301,129 @@ namespace SMS.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sValidLibrarian", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sValidLibrarian([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool sValidLibrarianResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool sValidLibrarianResultSpecified) {
+            object[] results = this.Invoke("sValidLibrarian", new object[] {
+                        email,
+                        password});
+            sValidLibrarianResult = ((bool)(results[0]));
+            sValidLibrarianResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void sValidLibrarianAsync(string email, string password) {
+            this.sValidLibrarianAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void sValidLibrarianAsync(string email, string password, object userState) {
+            if ((this.sValidLibrarianOperationCompleted == null)) {
+                this.sValidLibrarianOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsValidLibrarianOperationCompleted);
+            }
+            this.InvokeAsync("sValidLibrarian", new object[] {
+                        email,
+                        password}, this.sValidLibrarianOperationCompleted, userState);
+        }
+        
+        private void OnsValidLibrarianOperationCompleted(object arg) {
+            if ((this.sValidLibrarianCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sValidLibrarianCompleted(this, new sValidLibrarianCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewAllBooks", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Book[] sViewAllBooks() {
+            object[] results = this.Invoke("sViewAllBooks", new object[0]);
+            return ((Book[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewAllBooksAsync() {
+            this.sViewAllBooksAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sViewAllBooksAsync(object userState) {
+            if ((this.sViewAllBooksOperationCompleted == null)) {
+                this.sViewAllBooksOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewAllBooksOperationCompleted);
+            }
+            this.InvokeAsync("sViewAllBooks", new object[0], this.sViewAllBooksOperationCompleted, userState);
+        }
+        
+        private void OnsViewAllBooksOperationCompleted(object arg) {
+            if ((this.sViewAllBooksCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewAllBooksCompleted(this, new sViewAllBooksCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewBookByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Book[] sViewBookByName([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name) {
+            object[] results = this.Invoke("sViewBookByName", new object[] {
+                        name});
+            return ((Book[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewBookByNameAsync(string name) {
+            this.sViewBookByNameAsync(name, null);
+        }
+        
+        /// <remarks/>
+        public void sViewBookByNameAsync(string name, object userState) {
+            if ((this.sViewBookByNameOperationCompleted == null)) {
+                this.sViewBookByNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewBookByNameOperationCompleted);
+            }
+            this.InvokeAsync("sViewBookByName", new object[] {
+                        name}, this.sViewBookByNameOperationCompleted, userState);
+        }
+        
+        private void OnsViewBookByNameOperationCompleted(object arg) {
+            if ((this.sViewBookByNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewBookByNameCompleted(this, new sViewBookByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewBookByAuthor", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Book[] sViewBookByAuthor([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string author) {
+            object[] results = this.Invoke("sViewBookByAuthor", new object[] {
+                        author});
+            return ((Book[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewBookByAuthorAsync(string author) {
+            this.sViewBookByAuthorAsync(author, null);
+        }
+        
+        /// <remarks/>
+        public void sViewBookByAuthorAsync(string author, object userState) {
+            if ((this.sViewBookByAuthorOperationCompleted == null)) {
+                this.sViewBookByAuthorOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewBookByAuthorOperationCompleted);
+            }
+            this.InvokeAsync("sViewBookByAuthor", new object[] {
+                        author}, this.sViewBookByAuthorOperationCompleted, userState);
+        }
+        
+        private void OnsViewBookByAuthorOperationCompleted(object arg) {
+            if ((this.sViewBookByAuthorCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewBookByAuthorCompleted(this, new sViewBookByAuthorCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string GetData(int value, [System.Xml.Serialization.XmlIgnoreAttribute()] bool valueSpecified) {
@@ -358,6 +501,41 @@ namespace SMS.server {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+    public partial class Book {
+        
+        private string authorField;
+        
+        private string titleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Author {
+            get {
+                return this.authorField;
+            }
+            set {
+                this.authorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+            }
         }
     }
     
@@ -457,6 +635,118 @@ namespace SMS.server {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void sAddStudentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sValidLibrarianCompletedEventHandler(object sender, sValidLibrarianCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sValidLibrarianCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sValidLibrarianCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool sValidLibrarianResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool sValidLibrarianResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewAllBooksCompletedEventHandler(object sender, sViewAllBooksCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewAllBooksCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewAllBooksCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Book[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Book[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewBookByNameCompletedEventHandler(object sender, sViewBookByNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewBookByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewBookByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Book[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Book[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewBookByAuthorCompletedEventHandler(object sender, sViewBookByAuthorCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewBookByAuthorCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewBookByAuthorCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Book[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Book[])(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]

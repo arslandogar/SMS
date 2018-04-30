@@ -9,7 +9,7 @@ namespace SMS_WcfService
     public class Person
     {
         private string name;
-        private string password;
+        private string password = "123";
         private string cnic;
         private string gender;
         private string date_of_birth;

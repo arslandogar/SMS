@@ -27,3 +27,6 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.csproj.GenerateResource.Ca
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAddStudent.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAddLibrarian.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminLogin.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLibrarianLogin.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLibrarianViewBooks.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmMain.resources

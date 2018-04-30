@@ -27,6 +27,19 @@ namespace SMS_WcfService
 
         [OperationContract]
         void sAddStudent(string name, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address);
+
+        [OperationContract]
+        bool sValidLibrarian(string email, string password);
+
+        [OperationContract]
+        List<Book> sViewAllBooks();
+
+        [OperationContract]
+        List<Book> sViewBookByName(string name);
+
+        [OperationContract]
+        List<Book> sViewBookByAuthor(string author);
+
         [OperationContract]
         string GetData(int value);
 

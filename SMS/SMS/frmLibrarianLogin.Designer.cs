@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class frmAdminLogin
+    partial class frmLibrarianLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLibrarianLogin));
             this.btLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lnUserName = new System.Windows.Forms.Label();
             this.lbPassword = new System.Windows.Forms.Label();
             this.llbMain = new System.Windows.Forms.LinkLabel();
@@ -54,21 +54,21 @@
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 1;
             // 
-            // txtUserName
+            // txtEmail
             // 
-            this.txtUserName.Location = new System.Drawing.Point(412, 159);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtUserName.TabIndex = 0;
+            this.txtEmail.Location = new System.Drawing.Point(412, 159);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 0;
             // 
             // lnUserName
             // 
             this.lnUserName.AutoSize = true;
             this.lnUserName.Location = new System.Drawing.Point(327, 162);
             this.lnUserName.Name = "lnUserName";
-            this.lnUserName.Size = new System.Drawing.Size(63, 13);
+            this.lnUserName.Size = new System.Drawing.Size(35, 13);
             this.lnUserName.TabIndex = 3;
-            this.lnUserName.Text = "User Name:";
+            this.lnUserName.Text = "Email:";
             // 
             // lbPassword
             // 
@@ -90,7 +90,7 @@
             this.llbMain.Text = "Main Page";
             this.llbMain.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbMain_LinkClicked);
             // 
-            // frmAdminLogin
+            // frmLibrarianLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,14 +98,14 @@
             this.Controls.Add(this.llbMain);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lnUserName);
-            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btLogin);
             this.Icon = SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmAdminLogin";
+            this.Name = "frmLibrarianLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin - Login";
+            this.Text = "Librarian - Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,7 +115,7 @@
 
         private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lnUserName;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.LinkLabel llbMain;

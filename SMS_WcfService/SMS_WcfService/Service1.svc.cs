@@ -104,5 +104,29 @@ namespace SMS_WcfService
             }
             return false;
         }
+
+        public bool sValidLibrarian(string email, string password)
+        {
+            if (EmployeesDataClass.Librarian.Email == email && EmployeesDataClass.Librarian.Password == password)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public List<Book> sViewAllBooks()
+        {
+            return BooksDataClass.Books;
+        }
+
+        public List<Book> sViewBookByAuthor(string author)
+        {
+            return BooksDataClass.searchByAuthor(author);
+        }
+
+        public List<Book> sViewBookByName(string name)
+        {
+            return BooksDataClass.searchByName(name);
+        }
     }
 }

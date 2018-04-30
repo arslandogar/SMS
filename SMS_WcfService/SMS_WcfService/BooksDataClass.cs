@@ -7,21 +7,50 @@ namespace SMS_WcfService
 {
     public class BooksDataClass
     {
-        private static List<Book> Books = new List<Book>();
+        private static List<Book> books = new List<Book>();
 
-        public void addBook(Book b)
+        public static List<Book> Books
+        {
+            get
+            {
+                return books;
+            }
+
+            set
+            {
+                books = value;
+            }
+        }
+
+        public static void addBook(Book b)
         {
 
         }
 
-        public List<Book> searchByAuthor(string author)
+        public static List<Book> searchByAuthor(string author)
         {
-            return Books;
+            List<Book> temp = new List<Book>();
+            foreach(Book b in books)
+            {
+                if(b.Author == author)
+                {
+                    temp.Add(b);
+                }
+            }
+            return temp;
         }
 
-        public List<Book> searchByName(string author)
+        public static List<Book> searchByName(string name)
         {
-            return Books;
+            List<Book> temp = new List<Book>();
+            foreach (Book b in books)
+            {
+                if (b.Title == name)
+                {
+                    temp.Add(b);
+                }
+            }
+            return temp;
         }
     }
 }
