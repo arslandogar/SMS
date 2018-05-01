@@ -30,3 +30,4 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminLogin.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLibrarianLogin.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLibrarianViewBooks.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmMain.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLibrarianMain.resources

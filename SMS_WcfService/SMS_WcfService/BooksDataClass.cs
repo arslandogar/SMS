@@ -24,8 +24,10 @@ namespace SMS_WcfService
 
         public static void addBook(Book b)
         {
+            books.Add(b);
 
         }
+
 
         public static List<Book> searchByAuthor(string author)
         {

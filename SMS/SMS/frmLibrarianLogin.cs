@@ -35,7 +35,7 @@ namespace SMS
                 }
                 else
                 {
-                    frmLibrarianViewBooks temp = new frmLibrarianViewBooks();
+                    frmLibrarianMain temp = new frmLibrarianMain();
                     temp.Show();
                     this.Close();
                 }

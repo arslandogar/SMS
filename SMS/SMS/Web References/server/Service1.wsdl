@@ -62,11 +62,29 @@
   <wsdl:message name="IService1_sViewBookByAuthor_OutputMessage">
     <wsdl:part name="parameters" element="tns:sViewBookByAuthorResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sAddBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:sAddBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sAddBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sAddBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sRemoveBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:sRemoveBook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sRemoveBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sRemoveBookResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
   <wsdl:message name="IService1_GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewBookNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewBookNames" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewBookNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewBookNamesResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
@@ -111,9 +129,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewBookByAuthor" message="tns:IService1_sViewBookByAuthor_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewBookByAuthorResponse" message="tns:IService1_sViewBookByAuthor_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="sAddBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sAddBook" message="tns:IService1_sAddBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sAddBookResponse" message="tns:IService1_sAddBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sRemoveBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sRemoveBook" message="tns:IService1_sRemoveBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sRemoveBookResponse" message="tns:IService1_sRemoveBook_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewBookNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewBookNames" message="tns:IService1_sViewBookNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewBookNamesResponse" message="tns:IService1_sViewBookNames_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -203,8 +233,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="sAddBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/sAddBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sRemoveBook">
+      <soap:operation soapAction="http://tempuri.org/IService1/sRemoveBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewBookNames">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewBookNames" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

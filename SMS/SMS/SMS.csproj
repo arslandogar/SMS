@@ -75,6 +75,12 @@
     <Compile Include="frmAdminLogin.Designer.cs">
       <DependentUpon>frmAdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLibrarianMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLibrarianMain.Designer.cs">
+      <DependentUpon>frmLibrarianMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLibrarianViewBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     <EmbeddedResource Include="frmAdminLogin.resx">
       <DependentUpon>frmAdminLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLibrarianMain.resx">
+      <DependentUpon>frmLibrarianMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLibrarianViewBooks.resx">
       <DependentUpon>frmLibrarianViewBooks.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +131,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\SMS.server.sViewAllBooksCompletedEventArgs.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

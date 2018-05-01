@@ -47,7 +47,13 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sViewBookByAuthorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sAddBookOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sRemoveBookOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewBookNamesOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
@@ -117,7 +123,16 @@ namespace SMS.server {
         public event sViewBookByAuthorCompletedEventHandler sViewBookByAuthorCompleted;
         
         /// <remarks/>
+        public event sAddBookCompletedEventHandler sAddBookCompleted;
+        
+        /// <remarks/>
+        public event sRemoveBookCompletedEventHandler sRemoveBookCompleted;
+        
+        /// <remarks/>
         public event GetDataCompletedEventHandler GetDataCompleted;
+        
+        /// <remarks/>
+        public event sViewBookNamesCompletedEventHandler sViewBookNamesCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -424,6 +439,66 @@ namespace SMS.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sAddBook", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sAddBook([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string author) {
+            this.Invoke("sAddBook", new object[] {
+                        title,
+                        author});
+        }
+        
+        /// <remarks/>
+        public void sAddBookAsync(string title, string author) {
+            this.sAddBookAsync(title, author, null);
+        }
+        
+        /// <remarks/>
+        public void sAddBookAsync(string title, string author, object userState) {
+            if ((this.sAddBookOperationCompleted == null)) {
+                this.sAddBookOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsAddBookOperationCompleted);
+            }
+            this.InvokeAsync("sAddBook", new object[] {
+                        title,
+                        author}, this.sAddBookOperationCompleted, userState);
+        }
+        
+        private void OnsAddBookOperationCompleted(object arg) {
+            if ((this.sAddBookCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sAddBookCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sRemoveBook", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sRemoveBook([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string title, out bool sRemoveBookResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool sRemoveBookResultSpecified) {
+            object[] results = this.Invoke("sRemoveBook", new object[] {
+                        title});
+            sRemoveBookResult = ((bool)(results[0]));
+            sRemoveBookResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void sRemoveBookAsync(string title) {
+            this.sRemoveBookAsync(title, null);
+        }
+        
+        /// <remarks/>
+        public void sRemoveBookAsync(string title, object userState) {
+            if ((this.sRemoveBookOperationCompleted == null)) {
+                this.sRemoveBookOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsRemoveBookOperationCompleted);
+            }
+            this.InvokeAsync("sRemoveBook", new object[] {
+                        title}, this.sRemoveBookOperationCompleted, userState);
+        }
+        
+        private void OnsRemoveBookOperationCompleted(object arg) {
+            if ((this.sRemoveBookCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sRemoveBookCompleted(this, new sRemoveBookCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetData", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string GetData(int value, [System.Xml.Serialization.XmlIgnoreAttribute()] bool valueSpecified) {
@@ -452,6 +527,35 @@ namespace SMS.server {
             if ((this.GetDataCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.GetDataCompleted(this, new GetDataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewBookNames", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sViewBookNames() {
+            object[] results = this.Invoke("sViewBookNames", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewBookNamesAsync() {
+            this.sViewBookNamesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sViewBookNamesAsync(object userState) {
+            if ((this.sViewBookNamesOperationCompleted == null)) {
+                this.sViewBookNamesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewBookNamesOperationCompleted);
+            }
+            this.InvokeAsync("sViewBookNames", new object[0], this.sViewBookNamesOperationCompleted, userState);
+        }
+        
+        private void OnsViewBookNamesOperationCompleted(object arg) {
+            if ((this.sViewBookNamesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewBookNamesCompleted(this, new sViewBookNamesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -750,6 +854,44 @@ namespace SMS.server {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sAddBookCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sRemoveBookCompletedEventHandler(object sender, sRemoveBookCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sRemoveBookCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sRemoveBookCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool sRemoveBookResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool sRemoveBookResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void GetDataCompletedEventHandler(object sender, GetDataCompletedEventArgs e);
     
     /// <remarks/>
@@ -770,6 +912,32 @@ namespace SMS.server {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewBookNamesCompletedEventHandler(object sender, sViewBookNamesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewBookNamesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewBookNamesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
             }
         }
     }

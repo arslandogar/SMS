@@ -30,6 +30,14 @@ namespace SMS_WcfService
             return composite;
         }
 
+        public void sAddBook(string title, string author)
+        {
+            Book temp = new Book();
+            temp.Title = title;
+            temp.Author = author;
+            BooksDataClass.addBook(temp);
+        }
+
         public void sAddParent(string name, string cnic, string contact, string childCnic)
         {
             Parent parent = new Parent();
@@ -84,6 +92,19 @@ namespace SMS_WcfService
             EmployeesDataClass.changeLibrarian(librarian);
         }
 
+        public bool sRemoveBook(string title)
+        {
+            foreach(Book b in BooksDataClass.Books)
+            {
+                if(b.Title == title)
+                {
+                    BooksDataClass.Books.Remove(b);
+                    return true; ;
+                }
+            }
+            return false;
+        }
+
         public void sSetDefaultAdmin()
         {
             if(AdminDataClass.adminSet)
@@ -127,6 +148,16 @@ namespace SMS_WcfService
         public List<Book> sViewBookByName(string name)
         {
             return BooksDataClass.searchByName(name);
+        }
+
+        public List<string> sViewBookNames()
+        {
+            List<string> temp = new List<string>();
+            foreach(Book b in BooksDataClass.Books)
+            {
+                temp.Add(b.Title);
+            }
+            return temp;
         }
     }
 }

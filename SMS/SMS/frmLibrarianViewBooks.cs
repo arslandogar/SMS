@@ -49,5 +49,12 @@ namespace SMS
             source.DataSource = ser.sViewBookByAuthor(txtAuthor.Text);
             dataGridView.DataSource = source;
         }
+
+        private void btnMain_Click(object sender, EventArgs e)
+        {
+            frmLibrarianMain temp = new frmLibrarianMain();
+            temp.Show();
+            this.Close();
+        }
     }
 }

@@ -41,7 +41,16 @@ namespace SMS_WcfService
         List<Book> sViewBookByAuthor(string author);
 
         [OperationContract]
+        void sAddBook(string title, string author);
+
+        [OperationContract]
+        bool sRemoveBook(string title);
+
+        [OperationContract]
         string GetData(int value);
+
+        [OperationContract]
+        List<string> sViewBookNames();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
