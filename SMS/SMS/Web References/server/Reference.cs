@@ -55,6 +55,14 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sViewBookNamesOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sMarkAttendanceEmployeeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewEmployeeNumbersOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewRollNumbersOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewAttendancesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -133,6 +141,18 @@ namespace SMS.server {
         
         /// <remarks/>
         public event sViewBookNamesCompletedEventHandler sViewBookNamesCompleted;
+        
+        /// <remarks/>
+        public event sMarkAttendanceEmployeeCompletedEventHandler sMarkAttendanceEmployeeCompleted;
+        
+        /// <remarks/>
+        public event sViewEmployeeNumbersCompletedEventHandler sViewEmployeeNumbersCompleted;
+        
+        /// <remarks/>
+        public event sViewRollNumbersCompletedEventHandler sViewRollNumbersCompleted;
+        
+        /// <remarks/>
+        public event sViewAttendancesCompletedEventHandler sViewAttendancesCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -560,6 +580,129 @@ namespace SMS.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sMarkAttendanceEmployee", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sMarkAttendanceEmployee([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string employee_no, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string status, out bool sMarkAttendanceEmployeeResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool sMarkAttendanceEmployeeResultSpecified) {
+            object[] results = this.Invoke("sMarkAttendanceEmployee", new object[] {
+                        employee_no,
+                        date,
+                        status});
+            sMarkAttendanceEmployeeResult = ((bool)(results[0]));
+            sMarkAttendanceEmployeeResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void sMarkAttendanceEmployeeAsync(string employee_no, string date, string status) {
+            this.sMarkAttendanceEmployeeAsync(employee_no, date, status, null);
+        }
+        
+        /// <remarks/>
+        public void sMarkAttendanceEmployeeAsync(string employee_no, string date, string status, object userState) {
+            if ((this.sMarkAttendanceEmployeeOperationCompleted == null)) {
+                this.sMarkAttendanceEmployeeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsMarkAttendanceEmployeeOperationCompleted);
+            }
+            this.InvokeAsync("sMarkAttendanceEmployee", new object[] {
+                        employee_no,
+                        date,
+                        status}, this.sMarkAttendanceEmployeeOperationCompleted, userState);
+        }
+        
+        private void OnsMarkAttendanceEmployeeOperationCompleted(object arg) {
+            if ((this.sMarkAttendanceEmployeeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sMarkAttendanceEmployeeCompleted(this, new sMarkAttendanceEmployeeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewEmployeeNumbers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sViewEmployeeNumbers() {
+            object[] results = this.Invoke("sViewEmployeeNumbers", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewEmployeeNumbersAsync() {
+            this.sViewEmployeeNumbersAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sViewEmployeeNumbersAsync(object userState) {
+            if ((this.sViewEmployeeNumbersOperationCompleted == null)) {
+                this.sViewEmployeeNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewEmployeeNumbersOperationCompleted);
+            }
+            this.InvokeAsync("sViewEmployeeNumbers", new object[0], this.sViewEmployeeNumbersOperationCompleted, userState);
+        }
+        
+        private void OnsViewEmployeeNumbersOperationCompleted(object arg) {
+            if ((this.sViewEmployeeNumbersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewEmployeeNumbersCompleted(this, new sViewEmployeeNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewRollNumbers", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sViewRollNumbers() {
+            object[] results = this.Invoke("sViewRollNumbers", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewRollNumbersAsync() {
+            this.sViewRollNumbersAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sViewRollNumbersAsync(object userState) {
+            if ((this.sViewRollNumbersOperationCompleted == null)) {
+                this.sViewRollNumbersOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewRollNumbersOperationCompleted);
+            }
+            this.InvokeAsync("sViewRollNumbers", new object[0], this.sViewRollNumbersOperationCompleted, userState);
+        }
+        
+        private void OnsViewRollNumbersOperationCompleted(object arg) {
+            if ((this.sViewRollNumbersCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewRollNumbersCompleted(this, new sViewRollNumbersCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewAttendances", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Attendance[] sViewAttendances([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string id) {
+            object[] results = this.Invoke("sViewAttendances", new object[] {
+                        id});
+            return ((Attendance[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewAttendancesAsync(string id) {
+            this.sViewAttendancesAsync(id, null);
+        }
+        
+        /// <remarks/>
+        public void sViewAttendancesAsync(string id, object userState) {
+            if ((this.sViewAttendancesOperationCompleted == null)) {
+                this.sViewAttendancesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewAttendancesOperationCompleted);
+            }
+            this.InvokeAsync("sViewAttendances", new object[] {
+                        id}, this.sViewAttendancesOperationCompleted, userState);
+        }
+        
+        private void OnsViewAttendancesOperationCompleted(object arg) {
+            if ((this.sViewAttendancesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewAttendancesCompleted(this, new sViewAttendancesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetDataUsingDataContract", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public CompositeType GetDataUsingDataContract([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CompositeType composite) {
@@ -686,6 +829,41 @@ namespace SMS.server {
             }
             set {
                 this.stringValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+    public partial class Attendance {
+        
+        private string dateField;
+        
+        private string statusField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
             }
         }
     }
@@ -938,6 +1116,118 @@ namespace SMS.server {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sMarkAttendanceEmployeeCompletedEventHandler(object sender, sMarkAttendanceEmployeeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sMarkAttendanceEmployeeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sMarkAttendanceEmployeeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool sMarkAttendanceEmployeeResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool sMarkAttendanceEmployeeResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewEmployeeNumbersCompletedEventHandler(object sender, sViewEmployeeNumbersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewEmployeeNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewEmployeeNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewRollNumbersCompletedEventHandler(object sender, sViewRollNumbersCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewRollNumbersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewRollNumbersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewAttendancesCompletedEventHandler(object sender, sViewAttendancesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewAttendancesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewAttendancesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Attendance[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Attendance[])(this.results[0]));
             }
         }
     }

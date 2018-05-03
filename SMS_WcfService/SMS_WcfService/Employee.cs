@@ -11,11 +11,10 @@ namespace SMS_WcfService
         private string joining_date;
         private List<Attendance> attendances = new List<Attendance>();
 
-        public List<Attendance> addAttendance(Attendance A)
+        public void addAttendance(Attendance a)
         {
-            return attendances;
+            attendances.Add(a);
         }
-
         public string Joining_date
         {
             get
@@ -39,6 +38,19 @@ namespace SMS_WcfService
             set
             {
                 employee_no = value;
+            }
+        }
+
+        public List<Attendance> Attendances
+        {
+            get
+            {
+                return attendances;
+            }
+
+            set
+            {
+                attendances = value;
             }
         }
     }

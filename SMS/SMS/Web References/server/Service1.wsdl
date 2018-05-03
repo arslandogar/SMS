@@ -86,6 +86,30 @@
   <wsdl:message name="IService1_sViewBookNames_OutputMessage">
     <wsdl:part name="parameters" element="tns:sViewBookNamesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sMarkAttendanceEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:sMarkAttendanceEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sMarkAttendanceEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sMarkAttendanceEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewEmployeeNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewEmployeeNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewEmployeeNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewEmployeeNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewRollNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewRollNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewRollNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewRollNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewAttendances_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewAttendances" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewAttendances_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewAttendancesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -144,6 +168,22 @@
     <wsdl:operation name="sViewBookNames">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewBookNames" message="tns:IService1_sViewBookNames_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewBookNamesResponse" message="tns:IService1_sViewBookNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sMarkAttendanceEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sMarkAttendanceEmployee" message="tns:IService1_sMarkAttendanceEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sMarkAttendanceEmployeeResponse" message="tns:IService1_sMarkAttendanceEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewEmployeeNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewEmployeeNumbers" message="tns:IService1_sViewEmployeeNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewEmployeeNumbersResponse" message="tns:IService1_sViewEmployeeNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewRollNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewRollNumbers" message="tns:IService1_sViewRollNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewRollNumbersResponse" message="tns:IService1_sViewRollNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewAttendances">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewAttendances" message="tns:IService1_sViewAttendances_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewAttendancesResponse" message="tns:IService1_sViewAttendances_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -262,6 +302,42 @@
     </wsdl:operation>
     <wsdl:operation name="sViewBookNames">
       <soap:operation soapAction="http://tempuri.org/IService1/sViewBookNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sMarkAttendanceEmployee">
+      <soap:operation soapAction="http://tempuri.org/IService1/sMarkAttendanceEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewEmployeeNumbers">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewEmployeeNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewRollNumbers">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewRollNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewAttendances">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewAttendances" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

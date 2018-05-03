@@ -92,6 +92,28 @@ namespace SMS_WcfService
             EmployeesDataClass.changeLibrarian(librarian);
         }
 
+        public bool sMarkAttendanceEmployee(string employee_no, string date, string status)
+        {
+            Attendance attendance = new Attendance();
+            attendance.Date = date;
+            if(EmployeesDataClass.Librarian.Employee_no == employee_no)
+            {
+                attendance.Status = status;
+                EmployeesDataClass.Librarian.addAttendance(attendance);
+                return true;
+            }
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                if(t.Employee_no == employee_no)
+                {
+                    attendance.Status = status;
+                    t.addAttendance(attendance);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public bool sRemoveBook(string title)
         {
             foreach(Book b in BooksDataClass.Books)
@@ -140,6 +162,30 @@ namespace SMS_WcfService
             return BooksDataClass.Books;
         }
 
+        public List<Attendance> sViewAttendances(string id)
+        {
+            List<Attendance> temp = new List<Attendance>(); 
+            if(EmployeesDataClass.Librarian.Employee_no == id)
+            {
+                return EmployeesDataClass.Librarian.Attendances;
+            }
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                if(t.Employee_no == id)
+                {
+                    return t.Attendances;
+                }
+            }
+            foreach(Student s in StudentsDataClass.Students)
+            {
+                if(s.Roll_no == id)
+                {
+                    return s.Attendances;
+                }
+            }
+            return temp;
+        }
+
         public List<Book> sViewBookByAuthor(string author)
         {
             return BooksDataClass.searchByAuthor(author);
@@ -156,6 +202,27 @@ namespace SMS_WcfService
             foreach(Book b in BooksDataClass.Books)
             {
                 temp.Add(b.Title);
+            }
+            return temp;
+        }
+
+        public List<string> sViewEmployeeNumbers()
+        {
+            List<string> temp = new List<string>();
+            temp.Add(EmployeesDataClass.Librarian.Employee_no);
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                temp.Add(t.Employee_no);
+            }
+            return temp;
+        }
+
+        public List<string> sViewRollNumbers()
+        {
+            List<string> temp = new List<string>();
+            foreach(Student s in StudentsDataClass.Students)
+            {
+                temp.Add(s.Roll_no);
             }
             return temp;
         }

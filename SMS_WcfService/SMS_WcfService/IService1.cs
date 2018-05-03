@@ -53,6 +53,18 @@ namespace SMS_WcfService
         List<string> sViewBookNames();
 
         [OperationContract]
+        bool sMarkAttendanceEmployee(string employee_no, string date, string status);
+
+        [OperationContract]
+        List<string> sViewEmployeeNumbers();
+
+        [OperationContract]
+        List<string> sViewRollNumbers();
+
+        [OperationContract]
+        List<Attendance> sViewAttendances(string id);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

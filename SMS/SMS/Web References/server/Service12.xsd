@@ -13,6 +13,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Book" nillable="true" type="tns:Book" />
+  <xs:complexType name="ArrayOfAttendance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attendance" nillable="true" type="tns:Attendance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttendance" nillable="true" type="tns:ArrayOfAttendance" />
+  <xs:complexType name="Attendance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attendance" nillable="true" type="tns:Attendance" />
   <xs:complexType name="CompositeType">
     <xs:sequence>
       <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />

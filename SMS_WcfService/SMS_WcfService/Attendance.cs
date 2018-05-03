@@ -8,7 +8,7 @@ namespace SMS_WcfService
     public class Attendance
     {
         private string date;
-        private Person person;
+        private string status;
 
         public string Date
         {
@@ -23,16 +23,16 @@ namespace SMS_WcfService
             }
         }
 
-        public Person Person
+        public string Status
         {
             get
             {
-                return person;
+                return status;
             }
 
             set
             {
-                person = value;
+                status = value;
             }
         }
     }

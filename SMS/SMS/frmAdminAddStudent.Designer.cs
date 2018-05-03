@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminAddStudent));
             this.panel = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSendMessages = new System.Windows.Forms.Button();
@@ -122,6 +121,7 @@
             this.btnViewAttendances.TabIndex = 23;
             this.btnViewAttendances.Text = "View Attenance Reports";
             this.btnViewAttendances.UseVisualStyleBackColor = true;
+            this.btnViewAttendances.Click += new System.EventHandler(this.btnViewAttendances_Click);
             // 
             // btnAddLibrarian
             // 
@@ -186,6 +186,7 @@
             this.btnMarkAttendance.TabIndex = 24;
             this.btnMarkAttendance.Text = "Mark Attendance";
             this.btnMarkAttendance.UseVisualStyleBackColor = true;
+            this.btnMarkAttendance.Click += new System.EventHandler(this.btnMarkAttendance_Click);
             // 
             // btnViewStudents
             // 
@@ -315,6 +316,7 @@
             this.btnBrowse.TabIndex = 3;
             this.btnBrowse.Text = "Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // pictureBox
             // 
@@ -478,7 +480,7 @@
             this.Controls.Add(this.txtParentName);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.panel);
-            this.Icon = SMS.Properties.Resources.icon;
+            this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
             this.Name = "frmAdminAddStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

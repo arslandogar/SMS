@@ -70,5 +70,31 @@ namespace SMS
             temp.Show();
             this.Close();
         }
+
+        private void btnMarkAttendance_Click(object sender, EventArgs e)
+        {
+            frmAdminMarkAttendance temp = new frmAdminMarkAttendance();
+            temp.Show();
+            this.Close();
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Title = "Open Image";
+            dlg.Filter = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = Image.FromFile(dlg.FileName);
+            }
+            dlg.Dispose();
+        }
+
+        private void btnViewAttendances_Click(object sender, EventArgs e)
+        {
+            frmAdminViewAttendanceReports temp = new frmAdminViewAttendanceReports();
+            temp.Show();
+            this.Close();
+        }
     }
 }
