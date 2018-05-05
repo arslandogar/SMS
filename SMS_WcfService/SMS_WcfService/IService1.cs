@@ -26,7 +26,7 @@ namespace SMS_WcfService
         void sAddParent(string name, string cnic, string contact, string childCnic);
 
         [OperationContract]
-        void sAddStudent(string name, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address);
+        void sAddStudent(string name, string cnic, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address);
 
         [OperationContract]
         bool sValidLibrarian(string email, string password);
@@ -63,6 +63,21 @@ namespace SMS_WcfService
 
         [OperationContract]
         List<Attendance> sViewAttendances(string id);
+
+        [OperationContract]
+        void sAddCourse(string name);
+
+        [OperationContract]
+        bool sValidParent(string cnic, string password);
+
+        [OperationContract]
+        List<string> sViewCourses();
+
+        [OperationContract]
+        bool sValidStudent(string roll_no, string password);
+
+        [OperationContract]
+        List<string> sGetStudentInformation();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

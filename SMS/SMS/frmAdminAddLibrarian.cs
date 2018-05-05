@@ -70,5 +70,12 @@ namespace SMS
             temp.Show();
             this.Close();
         }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            frmAdminAddCourse temp = new frmAdminAddCourse();
+            temp.Show();
+            this.Close();
+        }
     }
 }

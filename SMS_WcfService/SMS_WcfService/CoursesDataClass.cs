@@ -9,9 +9,9 @@ namespace SMS_WcfService
     {
         private static List<Course> courses = new List<Course>();
 
-        public void addCourse(Course c)
+        public static void addCourse(Course c)
         {
-
+            courses.Add(c);
         }
 
         public static List<Course> Courses

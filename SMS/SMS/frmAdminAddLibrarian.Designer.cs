@@ -152,6 +152,7 @@
             this.btnAddCourse.TabIndex = 15;
             this.btnAddCourse.Text = "Add Course";
             this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnViewTeachers
             // 

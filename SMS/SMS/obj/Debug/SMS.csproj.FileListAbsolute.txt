@@ -33,3 +33,8 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmMain.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmLibrarianMain.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminMarkAttendance.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminViewAttendanceReports.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAddCourse.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmParentLogin.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentLogin.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentProfile.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmParentMain.resources

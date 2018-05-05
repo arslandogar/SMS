@@ -8,6 +8,8 @@ namespace SMS_WcfService
     public class StudentsDataClass
     {
         private static List<Student> students = new List<Student>();
+        private static Student current_student;
+        private static Parent current_parent;
 
         public static List<Student> Students
         {
@@ -19,6 +21,32 @@ namespace SMS_WcfService
             set
             {
                 students = value;
+            }
+        }
+
+        public static Student Current_student
+        {
+            get
+            {
+                return current_student;
+            }
+
+            set
+            {
+                current_student = value;
+            }
+        }
+
+        public static Parent Current_parent
+        {
+            get
+            {
+                return current_parent;
+            }
+
+            set
+            {
+                current_parent = value;
             }
         }
 

@@ -135,6 +135,7 @@
             this.btnAddCourse.TabIndex = 15;
             this.btnAddCourse.Text = "Add Course";
             this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnViewTeachers
             // 
@@ -203,12 +204,11 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Enabled = false;
             this.dateTimePicker.Location = new System.Drawing.Point(469, 177);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker.TabIndex = 14;
-            this.dateTimePicker.Value = new System.DateTime(2018, 5, 3, 12, 14, 25, 0);
+            this.dateTimePicker.Value = new System.DateTime(2018, 5, 6, 0, 0, 0, 0);
             // 
             // cmbStatus
             // 

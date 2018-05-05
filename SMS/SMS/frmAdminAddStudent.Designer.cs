@@ -159,6 +159,7 @@
             this.btnAddCourse.TabIndex = 19;
             this.btnAddCourse.Text = "Add Course";
             this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnViewTeachers
             // 
@@ -415,7 +416,6 @@
             this.cmbSelectCourses.Name = "cmbSelectCourses";
             this.cmbSelectCourses.Size = new System.Drawing.Size(121, 21);
             this.cmbSelectCourses.TabIndex = 11;
-            this.cmbSelectCourses.Text = "Select Courses";
             // 
             // bAddCourse
             // 

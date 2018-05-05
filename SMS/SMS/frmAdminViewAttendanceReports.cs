@@ -87,5 +87,12 @@ namespace SMS
             source.DataSource = ser.sViewAttendances(cmbSelect.Text);
             dataGridView.DataSource = source;
         }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            frmAdminAddCourse temp = new frmAdminAddCourse();
+            temp.Show();
+            this.Close();
+        }
     }
 }

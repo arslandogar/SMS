@@ -14,7 +14,8 @@ namespace SMS_WcfService
     public class Service1 : IService1
     {
         public string GetData(int value)
-        {            return string.Format("You entered: {0}", value);
+        {
+            return string.Format("You entered: {0}", value);
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
@@ -38,6 +39,13 @@ namespace SMS_WcfService
             BooksDataClass.addBook(temp);
         }
 
+        public void sAddCourse(string name)
+        {
+            Course temp = new Course();
+            temp.Title = name;
+            CoursesDataClass.addCourse(temp);
+        }
+
         public void sAddParent(string name, string cnic, string contact, string childCnic)
         {
             Parent parent = new Parent();
@@ -54,10 +62,11 @@ namespace SMS_WcfService
             }
         }
 
-        public void sAddStudent(string name, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address)
+        public void sAddStudent(string name, string cnic, string gender, string email, string roll_no, string date_of_birth, string contact, List<string> courseNames, string address)
         {
             Student student = new Student();
             student.Name = name;
+            student.Cnic = cnic;
             student.Gender = gender;
             student.Email = email;
             student.Roll_no = roll_no;
@@ -90,6 +99,20 @@ namespace SMS_WcfService
             librarian.Joining_date = joing_date;
             librarian.Employee_no = employee_no;
             EmployeesDataClass.changeLibrarian(librarian);
+        }
+
+        public List<string> sGetStudentInformation()
+        {
+            List<string> temp = new List<string>();
+            temp.Add(StudentsDataClass.Current_student.Name);
+            temp.Add(StudentsDataClass.Current_student.Gender);
+            temp.Add(StudentsDataClass.Current_student.Parent.Name);
+            temp.Add(StudentsDataClass.Current_student.Date_of_birth);
+            temp.Add(StudentsDataClass.Current_student.Roll_no);
+            temp.Add(StudentsDataClass.Current_student.Email);
+            temp.Add(StudentsDataClass.Current_student.Mobile_no);
+            temp.Add(StudentsDataClass.Current_student.Address);
+            return temp;
         }
 
         public bool sMarkAttendanceEmployee(string employee_no, string date, string status)
@@ -157,6 +180,22 @@ namespace SMS_WcfService
             return false;
         }
 
+        public bool sValidParent(string cnic, string password)
+        {
+            if (StudentsDataClass.Students != null)
+            {
+                foreach (Student s in StudentsDataClass.Students)
+                {
+                    if (s.Parent.Cnic == cnic && s.Parent.Password == password)
+                    {
+                        StudentsDataClass.Current_parent = s.Parent;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public List<Book> sViewAllBooks()
         {
             return BooksDataClass.Books;
@@ -206,6 +245,16 @@ namespace SMS_WcfService
             return temp;
         }
 
+        public List<string> sViewCourses()
+        {
+            List<string> temp = new List<string>();
+            foreach(Course c in  CoursesDataClass.Courses)
+            {
+                temp.Add(c.Title);
+            }
+            return temp;
+        }
+
         public List<string> sViewEmployeeNumbers()
         {
             List<string> temp = new List<string>();
@@ -225,6 +274,19 @@ namespace SMS_WcfService
                 temp.Add(s.Roll_no);
             }
             return temp;
+        }
+
+        public bool sValidStudent(string roll_no, string password)
+        {
+            foreach(Student s in StudentsDataClass.Students)
+            {
+                if(s.Roll_no == roll_no && s.Password == password)
+                {
+                    StudentsDataClass.Current_student = s;
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

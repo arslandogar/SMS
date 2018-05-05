@@ -28,6 +28,11 @@ namespace SMS
 
         private void frmAdminAddStudent_Load(object sender, EventArgs e)
         {
+            server.Service1 ser = new server.Service1();
+            BindingSource source = new BindingSource();
+            source.DataSource = ser.sViewCourses();
+            cmbSelectCourses.DataSource = source;
+            cmbSelectCourses.Text = "Select Courses";
             pictureBox.Image = SMS.Properties.Resources.user_pic;
         }
 
@@ -46,7 +51,7 @@ namespace SMS
             } else
             { 
                 server.Service1 ser = new server.Service1();
-                ser.sAddStudent(txtName.Text, cmbGender.Text, txtEmail.Text, txtRollNo.Text, dtpDateofBirth.Text, txtContact.Text, coursesAdded.ToArray(), txtAddress.Text);
+                ser.sAddStudent(txtName.Text, txtCnic.Text, cmbGender.Text, txtEmail.Text, txtRollNo.Text, dtpDateofBirth.Text, txtContact.Text, coursesAdded.ToArray(), txtAddress.Text);
                 ser.sAddParent(txtParentName.Text, txtParentCnic.Text, txtParentContact.Text, txtCnic.Text);
                 MessageBox.Show("Student Added!");
                 MessageBox.Show(txtName.Text + "'s parent also Added!");
@@ -93,6 +98,13 @@ namespace SMS
         private void btnViewAttendances_Click(object sender, EventArgs e)
         {
             frmAdminViewAttendanceReports temp = new frmAdminViewAttendanceReports();
+            temp.Show();
+            this.Close();
+        }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            frmAdminAddCourse temp = new frmAdminAddCourse();
             temp.Show();
             this.Close();
         }

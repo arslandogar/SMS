@@ -110,6 +110,36 @@
   <wsdl:message name="IService1_sViewAttendances_OutputMessage">
     <wsdl:part name="parameters" element="tns:sViewAttendancesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sAddCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:sAddCourse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sAddCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sAddCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidParent_InputMessage">
+    <wsdl:part name="parameters" element="tns:sValidParent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidParent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sValidParentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewCourses" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:sValidStudent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sValidStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetStudentInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetStudentInformation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetStudentInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetStudentInformationResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -184,6 +214,26 @@
     <wsdl:operation name="sViewAttendances">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewAttendances" message="tns:IService1_sViewAttendances_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewAttendancesResponse" message="tns:IService1_sViewAttendances_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sAddCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sAddCourse" message="tns:IService1_sAddCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sAddCourseResponse" message="tns:IService1_sAddCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sValidParent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sValidParent" message="tns:IService1_sValidParent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sValidParentResponse" message="tns:IService1_sValidParent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewCourses" message="tns:IService1_sViewCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewCoursesResponse" message="tns:IService1_sViewCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sValidStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sValidStudent" message="tns:IService1_sValidStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sValidStudentResponse" message="tns:IService1_sValidStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetStudentInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetStudentInformation" message="tns:IService1_sGetStudentInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetStudentInformationResponse" message="tns:IService1_sGetStudentInformation_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -338,6 +388,51 @@
     </wsdl:operation>
     <wsdl:operation name="sViewAttendances">
       <soap:operation soapAction="http://tempuri.org/IService1/sViewAttendances" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sAddCourse">
+      <soap:operation soapAction="http://tempuri.org/IService1/sAddCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sValidParent">
+      <soap:operation soapAction="http://tempuri.org/IService1/sValidParent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewCourses">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sValidStudent">
+      <soap:operation soapAction="http://tempuri.org/IService1/sValidStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetStudentInformation">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetStudentInformation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

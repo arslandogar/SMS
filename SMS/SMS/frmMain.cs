@@ -36,12 +36,16 @@ namespace SMS
 
         private void llbStudentLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmStudentLogin temp = new frmStudentLogin();
+            temp.Show();
+            this.Hide();
         }
 
         private void llbParentLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmParentLogin temp = new frmParentLogin();
+            temp.Show();
+            this.Hide();
         }
 
         private void llbLibrarianLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
