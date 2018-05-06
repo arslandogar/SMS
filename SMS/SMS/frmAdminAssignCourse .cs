@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class frmAdminViewCourses : Form
+    public partial class frmAdminAssignCourse : Form
     {
-        public frmAdminViewCourses()
+        public frmAdminAssignCourse()
         {
             InitializeComponent();
         }
@@ -52,26 +52,11 @@ namespace SMS
             this.Close();
         }
 
-        private void btnAddCourse_Click(object sender, EventArgs e)
+        private void btnViewCourses_Click(object sender, EventArgs e)
         {
-            frmAdminAddCourse temp = new frmAdminAddCourse();
+            frmAdminViewCourses temp = new frmAdminViewCourses();
             temp.Show();
             this.Close();
-        }
-
-        private void frmAdminViewCourses_Load(object sender, EventArgs e)
-        {
-            List<StringWrapper> courses = new List<StringWrapper>();
-            List<string> temp = new List<string>();
-            server.Service1 ser = new server.Service1();
-            BindingSource source = new BindingSource();
-            temp = ser.sViewCourses().ToList();
-            foreach(string s in temp)
-            {
-                StringWrapper item = new StringWrapper(s);
-                courses.Add(item);
-            }
-            dataGridView.DataSource = courses; 
         }
 
         private void btnAddTeacher_Click(object sender, EventArgs e)
@@ -81,11 +66,37 @@ namespace SMS
             this.Close();
         }
 
-        private void btnAssignCourse_Click(object sender, EventArgs e)
+        private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            frmAdminAssignCourse temp = new frmAdminAssignCourse();
+            frmAdminAddCourse temp = new frmAdminAddCourse();
             temp.Show();
             this.Close();
+        }
+
+        private void frmAdminAssignCourse_Load(object sender, EventArgs e)
+        {
+            server.Service1 ser = new server.Service1();
+            BindingSource t_source = new BindingSource();
+            BindingSource c_source = new BindingSource();
+            c_source.DataSource = ser.sViewNullCourses();
+            cmbSelectCourse.DataSource = c_source;
+            t_source.DataSource = ser.sViewTeacherNames();
+            cmbSelectTeacher.DataSource = t_source;
+            cmbSelectCourse.Text = "Select Course";
+            cmbSelectTeacher.Text = "Select Teacher";
+        }
+
+        private void btAssign_Click(object sender, EventArgs e)
+        {
+            server.Service1 ser = new server.Service1();
+            int i = cmbSelectTeacher.Text.IndexOf(':');
+            string t = cmbSelectTeacher.Text.Substring(0, i);
+            ser.sAssignCourse(t, cmbSelectCourse.Text);
+            BindingSource c_source = new BindingSource();
+            c_source.DataSource = ser.sViewNullCourses();
+            cmbSelectCourse.DataSource = c_source;
+            cmbSelectCourse.Text = "Select Course";
+            cmbSelectTeacher.Text = "Select Teacher";
         }
     }
 }

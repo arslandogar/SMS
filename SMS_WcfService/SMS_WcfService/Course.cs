@@ -8,7 +8,7 @@ namespace SMS_WcfService
     public class Course
     {
         private string title;
-        private Teacher teacher;
+        private Teacher teacher = null;
 
         public string Title
         {

@@ -73,7 +73,17 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sGetStudentInformationOperationCompleted;
         
-        private System.Threading.SendOrPostCallback sViewAllCoursesOperationCompleted;
+        private System.Threading.SendOrPostCallback sViewNullCoursesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sAddTeacherOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sValidTeacherOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sGetTeacherInformationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sViewTeacherNamesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sAssignCourseOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
@@ -182,7 +192,22 @@ namespace SMS.server {
         public event sGetStudentInformationCompletedEventHandler sGetStudentInformationCompleted;
         
         /// <remarks/>
-        public event sViewAllCoursesCompletedEventHandler sViewAllCoursesCompleted;
+        public event sViewNullCoursesCompletedEventHandler sViewNullCoursesCompleted;
+        
+        /// <remarks/>
+        public event sAddTeacherCompletedEventHandler sAddTeacherCompleted;
+        
+        /// <remarks/>
+        public event sValidTeacherCompletedEventHandler sValidTeacherCompleted;
+        
+        /// <remarks/>
+        public event sGetTeacherInformationCompletedEventHandler sGetTeacherInformationCompleted;
+        
+        /// <remarks/>
+        public event sViewTeacherNamesCompletedEventHandler sViewTeacherNamesCompleted;
+        
+        /// <remarks/>
+        public event sAssignCourseCompletedEventHandler sAssignCourseCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -885,31 +910,197 @@ namespace SMS.server {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewAllCourses", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewNullCourses", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
-        public Course[] sViewAllCourses() {
-            object[] results = this.Invoke("sViewAllCourses", new object[0]);
-            return ((Course[])(results[0]));
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sViewNullCourses() {
+            object[] results = this.Invoke("sViewNullCourses", new object[0]);
+            return ((string[])(results[0]));
         }
         
         /// <remarks/>
-        public void sViewAllCoursesAsync() {
-            this.sViewAllCoursesAsync(null);
+        public void sViewNullCoursesAsync() {
+            this.sViewNullCoursesAsync(null);
         }
         
         /// <remarks/>
-        public void sViewAllCoursesAsync(object userState) {
-            if ((this.sViewAllCoursesOperationCompleted == null)) {
-                this.sViewAllCoursesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewAllCoursesOperationCompleted);
+        public void sViewNullCoursesAsync(object userState) {
+            if ((this.sViewNullCoursesOperationCompleted == null)) {
+                this.sViewNullCoursesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewNullCoursesOperationCompleted);
             }
-            this.InvokeAsync("sViewAllCourses", new object[0], this.sViewAllCoursesOperationCompleted, userState);
+            this.InvokeAsync("sViewNullCourses", new object[0], this.sViewNullCoursesOperationCompleted, userState);
         }
         
-        private void OnsViewAllCoursesOperationCompleted(object arg) {
-            if ((this.sViewAllCoursesCompleted != null)) {
+        private void OnsViewNullCoursesOperationCompleted(object arg) {
+            if ((this.sViewNullCoursesCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.sViewAllCoursesCompleted(this, new sViewAllCoursesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.sViewNullCoursesCompleted(this, new sViewNullCoursesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sAddTeacher", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sAddTeacher([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string name, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string cnic, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string gender, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mobile_no, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string address, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date_of_birth, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string joing_date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string employee_no, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")] string[] courses_assigned) {
+            this.Invoke("sAddTeacher", new object[] {
+                        name,
+                        cnic,
+                        gender,
+                        email,
+                        mobile_no,
+                        address,
+                        date_of_birth,
+                        joing_date,
+                        employee_no,
+                        courses_assigned});
+        }
+        
+        /// <remarks/>
+        public void sAddTeacherAsync(string name, string cnic, string gender, string email, string mobile_no, string address, string date_of_birth, string joing_date, string employee_no, string[] courses_assigned) {
+            this.sAddTeacherAsync(name, cnic, gender, email, mobile_no, address, date_of_birth, joing_date, employee_no, courses_assigned, null);
+        }
+        
+        /// <remarks/>
+        public void sAddTeacherAsync(string name, string cnic, string gender, string email, string mobile_no, string address, string date_of_birth, string joing_date, string employee_no, string[] courses_assigned, object userState) {
+            if ((this.sAddTeacherOperationCompleted == null)) {
+                this.sAddTeacherOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsAddTeacherOperationCompleted);
+            }
+            this.InvokeAsync("sAddTeacher", new object[] {
+                        name,
+                        cnic,
+                        gender,
+                        email,
+                        mobile_no,
+                        address,
+                        date_of_birth,
+                        joing_date,
+                        employee_no,
+                        courses_assigned}, this.sAddTeacherOperationCompleted, userState);
+        }
+        
+        private void OnsAddTeacherOperationCompleted(object arg) {
+            if ((this.sAddTeacherCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sAddTeacherCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sValidTeacher", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sValidTeacher([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password, out bool sValidTeacherResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool sValidTeacherResultSpecified) {
+            object[] results = this.Invoke("sValidTeacher", new object[] {
+                        email,
+                        password});
+            sValidTeacherResult = ((bool)(results[0]));
+            sValidTeacherResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void sValidTeacherAsync(string email, string password) {
+            this.sValidTeacherAsync(email, password, null);
+        }
+        
+        /// <remarks/>
+        public void sValidTeacherAsync(string email, string password, object userState) {
+            if ((this.sValidTeacherOperationCompleted == null)) {
+                this.sValidTeacherOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsValidTeacherOperationCompleted);
+            }
+            this.InvokeAsync("sValidTeacher", new object[] {
+                        email,
+                        password}, this.sValidTeacherOperationCompleted, userState);
+        }
+        
+        private void OnsValidTeacherOperationCompleted(object arg) {
+            if ((this.sValidTeacherCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sValidTeacherCompleted(this, new sValidTeacherCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sGetTeacherInformation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sGetTeacherInformation() {
+            object[] results = this.Invoke("sGetTeacherInformation", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sGetTeacherInformationAsync() {
+            this.sGetTeacherInformationAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sGetTeacherInformationAsync(object userState) {
+            if ((this.sGetTeacherInformationOperationCompleted == null)) {
+                this.sGetTeacherInformationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsGetTeacherInformationOperationCompleted);
+            }
+            this.InvokeAsync("sGetTeacherInformation", new object[0], this.sGetTeacherInformationOperationCompleted, userState);
+        }
+        
+        private void OnsGetTeacherInformationOperationCompleted(object arg) {
+            if ((this.sGetTeacherInformationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sGetTeacherInformationCompleted(this, new sGetTeacherInformationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewTeacherNames", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sViewTeacherNames() {
+            object[] results = this.Invoke("sViewTeacherNames", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewTeacherNamesAsync() {
+            this.sViewTeacherNamesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sViewTeacherNamesAsync(object userState) {
+            if ((this.sViewTeacherNamesOperationCompleted == null)) {
+                this.sViewTeacherNamesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewTeacherNamesOperationCompleted);
+            }
+            this.InvokeAsync("sViewTeacherNames", new object[0], this.sViewTeacherNamesOperationCompleted, userState);
+        }
+        
+        private void OnsViewTeacherNamesOperationCompleted(object arg) {
+            if ((this.sViewTeacherNamesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewTeacherNamesCompleted(this, new sViewTeacherNamesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sAssignCourse", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sAssignCourse([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string teacher_id, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string course_name) {
+            this.Invoke("sAssignCourse", new object[] {
+                        teacher_id,
+                        course_name});
+        }
+        
+        /// <remarks/>
+        public void sAssignCourseAsync(string teacher_id, string course_name) {
+            this.sAssignCourseAsync(teacher_id, course_name, null);
+        }
+        
+        /// <remarks/>
+        public void sAssignCourseAsync(string teacher_id, string course_name, object userState) {
+            if ((this.sAssignCourseOperationCompleted == null)) {
+                this.sAssignCourseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsAssignCourseOperationCompleted);
+            }
+            this.InvokeAsync("sAssignCourse", new object[] {
+                        teacher_id,
+                        course_name}, this.sAssignCourseOperationCompleted, userState);
+        }
+        
+        private void OnsAssignCourseOperationCompleted(object arg) {
+            if ((this.sAssignCourseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sAssignCourseCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1049,266 +1240,6 @@ namespace SMS.server {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System.Drawing")]
-    public partial class Image {
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        private System.Xml.XmlQualifiedName factoryTypeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute()]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/")]
-        public System.Xml.XmlQualifiedName FactoryType {
-            get {
-                return this.factoryTypeField;
-            }
-            set {
-                this.factoryTypeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
-    public partial class Message {
-        
-        private string messageTextField;
-        
-        private Person senderField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string MessageText {
-            get {
-                return this.messageTextField;
-            }
-            set {
-                this.messageTextField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Person Sender {
-            get {
-                return this.senderField;
-            }
-            set {
-                this.senderField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Employee))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Teacher))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
-    public partial class Person {
-        
-        private string addressField;
-        
-        private string cnicField;
-        
-        private string date_of_birthField;
-        
-        private string emailField;
-        
-        private string genderField;
-        
-        private Message[] inboxField;
-        
-        private string mobile_noField;
-        
-        private string nameField;
-        
-        private string passwordField;
-        
-        private Image pictureField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Address {
-            get {
-                return this.addressField;
-            }
-            set {
-                this.addressField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Cnic {
-            get {
-                return this.cnicField;
-            }
-            set {
-                this.cnicField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Date_of_birth {
-            get {
-                return this.date_of_birthField;
-            }
-            set {
-                this.date_of_birthField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Gender {
-            get {
-                return this.genderField;
-            }
-            set {
-                this.genderField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public Message[] Inbox {
-            get {
-                return this.inboxField;
-            }
-            set {
-                this.inboxField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Mobile_no {
-            get {
-                return this.mobile_noField;
-            }
-            set {
-                this.mobile_noField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Image Picture {
-            get {
-                return this.pictureField;
-            }
-            set {
-                this.pictureField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Teacher))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
-    public partial class Employee : Person {
-        
-        private Attendance[] attendancesField;
-        
-        private string employee_noField;
-        
-        private string joining_dateField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public Attendance[] Attendances {
-            get {
-                return this.attendancesField;
-            }
-            set {
-                this.attendancesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Employee_no {
-            get {
-                return this.employee_noField;
-            }
-            set {
-                this.employee_noField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Joining_date {
-            get {
-                return this.joining_dateField;
-            }
-            set {
-                this.joining_dateField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
     public partial class Attendance {
         
@@ -1335,63 +1266,6 @@ namespace SMS.server {
             }
             set {
                 this.statusField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
-    public partial class Teacher : Employee {
-        
-        private Course[] assignedCoursesField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        public Course[] AssignedCourses {
-            get {
-                return this.assignedCoursesField;
-            }
-            set {
-                this.assignedCoursesField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
-    public partial class Course {
-        
-        private Teacher teacherField;
-        
-        private string titleField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Teacher Teacher {
-            get {
-                return this.teacherField;
-            }
-            set {
-                this.teacherField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Title {
-            get {
-                return this.titleField;
-            }
-            set {
-                this.titleField = value;
             }
         }
     }
@@ -1886,29 +1760,123 @@ namespace SMS.server {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void sViewAllCoursesCompletedEventHandler(object sender, sViewAllCoursesCompletedEventArgs e);
+    public delegate void sViewNullCoursesCompletedEventHandler(object sender, sViewNullCoursesCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class sViewAllCoursesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class sViewNullCoursesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal sViewAllCoursesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal sViewNullCoursesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public Course[] Result {
+        public string[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((Course[])(this.results[0]));
+                return ((string[])(this.results[0]));
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sAddTeacherCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sValidTeacherCompletedEventHandler(object sender, sValidTeacherCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sValidTeacherCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sValidTeacherCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool sValidTeacherResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool sValidTeacherResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sGetTeacherInformationCompletedEventHandler(object sender, sGetTeacherInformationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sGetTeacherInformationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sGetTeacherInformationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewTeacherNamesCompletedEventHandler(object sender, sViewTeacherNamesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewTeacherNamesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewTeacherNamesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sAssignCourseCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]

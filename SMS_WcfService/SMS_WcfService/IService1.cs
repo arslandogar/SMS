@@ -80,7 +80,22 @@ namespace SMS_WcfService
         List<string> sGetStudentInformation();
 
         [OperationContract]
-        List<Course> sViewAllCourses();
+        List<string> sViewNullCourses();
+
+        [OperationContract]
+        void sAddTeacher(string name, string cnic, string gender, string email, string mobile_no, string address, string date_of_birth, string joing_date, string employee_no, List<string> courses_assigned);
+
+        [OperationContract]
+        bool sValidTeacher(string email, string password);
+
+        [OperationContract]
+        List<string> sGetTeacherInformation();
+
+        [OperationContract]
+        List<string> sViewTeacherNames();
+
+        [OperationContract]
+        void sAssignCourse(string teacher_id, string course_name);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

@@ -144,6 +144,7 @@
             this.btnAssignCourse.TabIndex = 16;
             this.btnAssignCourse.Text = "Assign Course";
             this.btnAssignCourse.UseVisualStyleBackColor = true;
+            this.btnAssignCourse.Click += new System.EventHandler(this.btnAssignCourse_Click);
             // 
             // btnAddCourse
             // 
@@ -172,6 +173,7 @@
             this.btnAddTeacher.TabIndex = 13;
             this.btnAddTeacher.Text = "Add Teacher";
             this.btnAddTeacher.UseVisualStyleBackColor = true;
+            this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
             // 
             // btnMarkAttendance
             // 

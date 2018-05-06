@@ -310,29 +310,102 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="sViewAllCourses">
+  <xs:element name="sViewNullCourses">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="sViewAllCoursesResponse">
+  <xs:element name="sViewNullCoursesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SMS_WcfService" minOccurs="0" name="sViewAllCoursesResult" nillable="true" type="q11:ArrayOfCourse" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sViewNullCoursesResult" nillable="true" type="q11:ArrayOfstring" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sAddTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cnic" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="gender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobile_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date_of_birth" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="joing_date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="employee_no" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="courses_assigned" nillable="true" type="q12:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sAddTeacherResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sValidTeacher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sValidTeacherResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sValidTeacherResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sGetTeacherInformation">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sGetTeacherInformationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sGetTeacherInformationResult" nillable="true" type="q13:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sViewTeacherNames">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sViewTeacherNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sViewTeacherNamesResult" nillable="true" type="q14:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sAssignCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacher_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="course_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sAssignCourseResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SMS_WcfService" minOccurs="0" name="composite" nillable="true" type="q12:CompositeType" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SMS_WcfService" minOccurs="0" name="composite" nillable="true" type="q15:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SMS_WcfService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q13:CompositeType" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SMS_WcfService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q16:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

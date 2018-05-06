@@ -39,3 +39,7 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentLogin.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentProfile.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmParentMain.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminViewCourses.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAddTeacher.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherLogin.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherProfile.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAssignCourse.resources

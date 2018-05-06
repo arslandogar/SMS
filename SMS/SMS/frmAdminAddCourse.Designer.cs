@@ -6,7 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+  
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -126,6 +126,7 @@
             this.btnAssignCourse.TabIndex = 16;
             this.btnAssignCourse.Text = "Assign Course";
             this.btnAssignCourse.UseVisualStyleBackColor = true;
+            this.btnAssignCourse.Click += new System.EventHandler(this.btnAssignCourse_Click);
             // 
             // btnAddCourse
             // 
@@ -154,6 +155,7 @@
             this.btnAddTeacher.TabIndex = 13;
             this.btnAddTeacher.Text = "Add Teacher";
             this.btnAddTeacher.UseVisualStyleBackColor = true;
+            this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
             // 
             // btnMarkAttendance
             // 
@@ -211,7 +213,7 @@
             this.bAddCourse.UseVisualStyleBackColor = true;
             this.bAddCourse.Click += new System.EventHandler(this.bAddCourse_Click);
             // 
-            // frmAdminAddCourse
+            // frmAdminAssignCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +224,7 @@
             this.Controls.Add(this.panel);
             this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmAdminAddCourse";
+            this.Name = "frmAdminAssignCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Add Course";
             this.panel.ResumeLayout(false);

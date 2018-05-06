@@ -7,11 +7,11 @@ namespace SMS_WcfService
 {
     public class Teacher:Employee
     {
-        private List<Course> assignedCourses;
+        private List<Course> assignedCourses = new List<Course>();
 
         public void addCourse(Course c)
         {
-
+             assignedCourses.Add(c);
         }
 
         public List<Course> AssignedCourses

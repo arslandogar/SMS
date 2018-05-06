@@ -289,9 +289,96 @@ namespace SMS_WcfService
             return false;
         }
 
-        public List<Course> sViewAllCourses()
+        public List<string> sViewNullCourses()
         {
-            return CoursesDataClass.Courses;
+            List<string> temp = new List<string>();
+            foreach(Course c in CoursesDataClass.Courses)
+            {
+                if(c.Teacher == null)
+                {
+                    temp.Add(c.Title);
+                }
+            }
+            return temp;
+        }
+
+        public void sAddTeacher(string name, string cnic, string gender, string email, string mobile_no, string address, string date_of_birth, string joing_date, string employee_no, List<string> courses_assigned)
+        {
+            Teacher teacher = new Teacher();
+            teacher.Name = name;
+            teacher.Cnic = cnic;
+            teacher.Gender = gender;
+            teacher.Email = email;
+            teacher.Mobile_no = mobile_no;
+            teacher.Address = address;
+            teacher.Date_of_birth = date_of_birth;
+            teacher.Joining_date = joing_date;
+            teacher.Employee_no = employee_no;
+            foreach(string courName in courses_assigned)
+            {
+                foreach(Course c in CoursesDataClass.Courses)
+                {
+                    if(c.Title == courName)
+                    {
+                        teacher.addCourse(c);
+                        c.Teacher = teacher;
+                    }
+                }
+            }
+            EmployeesDataClass.addTeacher(teacher);
+        }
+
+        public bool sValidTeacher(string email, string password)
+        {
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                if(t.Email == email && t.Password == password)
+                {
+                    EmployeesDataClass.Current_teacher = t;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public List<string> sGetTeacherInformation()
+        {
+            List<string> temp = new List<string>();
+            temp.Add(EmployeesDataClass.Current_teacher.Name);
+            temp.Add(EmployeesDataClass.Current_teacher.Gender);
+            temp.Add(EmployeesDataClass.Current_teacher.Date_of_birth);
+            temp.Add(EmployeesDataClass.Current_teacher.Employee_no);
+            temp.Add(EmployeesDataClass.Current_teacher.Joining_date);
+            temp.Add(EmployeesDataClass.Current_teacher.Email);
+            temp.Add(EmployeesDataClass.Current_teacher.Mobile_no);
+            temp.Add(EmployeesDataClass.Current_teacher.Address);
+            return temp;
+        }
+
+        public List<string> sViewTeacherNames()
+        {
+            List<string> temp = new List<string>();
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                string s = t.Employee_no + ": " + t.Name;
+                temp.Add(s);
+            }
+            return temp;
+        }
+
+        public void sAssignCourse(string teacher_id, string course_name)
+        {
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                foreach(Course c in CoursesDataClass.Courses)
+                {
+                    if(t.Employee_no == teacher_id && c.Title == course_name)
+                    {
+                        t.addCourse(c);
+                        c.Teacher = t;
+                    }
+                }
+            }
         }
     }
 }

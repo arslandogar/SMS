@@ -9,11 +9,13 @@ namespace SMS_WcfService
     {
         private static List<Teacher> teachers = new List<Teacher>();
 
+        private static Teacher current_teacher; 
+
         private static Librarian librarian = new Librarian();
 
         public static void addTeacher(Teacher t)
         {
-
+            teachers.Add(t);
         }
 
         public static List<Teacher> searchByCourse(string name)
@@ -49,6 +51,19 @@ namespace SMS_WcfService
             set
             {
                 librarian = value;
+            }
+        }
+
+        public static Teacher Current_teacher
+        {
+            get
+            {
+                return current_teacher;
+            }
+
+            set
+            {
+                current_teacher = value;
             }
         }
     }

@@ -54,5 +54,12 @@ namespace SMS
             temp.Show();
             this.Hide();
         }
+
+        private void llbTeacherLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmTeacherLogin temp = new frmTeacherLogin();
+            temp.Show();
+            this.Hide();
+        }
     }
 }

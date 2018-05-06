@@ -6,7 +6,6 @@
       <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService" />
-      <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_sSetDefaultAdmin_InputMessage">
@@ -141,11 +140,41 @@
   <wsdl:message name="IService1_sGetStudentInformation_OutputMessage">
     <wsdl:part name="parameters" element="tns:sGetStudentInformationResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_sViewAllCourses_InputMessage">
-    <wsdl:part name="parameters" element="tns:sViewAllCourses" />
+  <wsdl:message name="IService1_sViewNullCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewNullCourses" />
   </wsdl:message>
-  <wsdl:message name="IService1_sViewAllCourses_OutputMessage">
-    <wsdl:part name="parameters" element="tns:sViewAllCoursesResponse" />
+  <wsdl:message name="IService1_sViewNullCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewNullCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sAddTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:sAddTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sAddTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sAddTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:sValidTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sValidTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sValidTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetTeacherInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetTeacherInformation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetTeacherInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetTeacherInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewTeacherNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewTeacherNames" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewTeacherNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewTeacherNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sAssignCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:sAssignCourse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sAssignCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sAssignCourseResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
@@ -242,9 +271,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetStudentInformation" message="tns:IService1_sGetStudentInformation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetStudentInformationResponse" message="tns:IService1_sGetStudentInformation_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="sViewAllCourses">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewAllCourses" message="tns:IService1_sViewAllCourses_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewAllCoursesResponse" message="tns:IService1_sViewAllCourses_OutputMessage" />
+    <wsdl:operation name="sViewNullCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewNullCourses" message="tns:IService1_sViewNullCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewNullCoursesResponse" message="tns:IService1_sViewNullCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sAddTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sAddTeacher" message="tns:IService1_sAddTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sAddTeacherResponse" message="tns:IService1_sAddTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sValidTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sValidTeacher" message="tns:IService1_sValidTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sValidTeacherResponse" message="tns:IService1_sValidTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetTeacherInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetTeacherInformation" message="tns:IService1_sGetTeacherInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetTeacherInformationResponse" message="tns:IService1_sGetTeacherInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewTeacherNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewTeacherNames" message="tns:IService1_sViewTeacherNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewTeacherNamesResponse" message="tns:IService1_sViewTeacherNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sAssignCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sAssignCourse" message="tns:IService1_sAssignCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sAssignCourseResponse" message="tns:IService1_sAssignCourse_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -451,8 +500,53 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="sViewAllCourses">
-      <soap:operation soapAction="http://tempuri.org/IService1/sViewAllCourses" style="document" />
+    <wsdl:operation name="sViewNullCourses">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewNullCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sAddTeacher">
+      <soap:operation soapAction="http://tempuri.org/IService1/sAddTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sValidTeacher">
+      <soap:operation soapAction="http://tempuri.org/IService1/sValidTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetTeacherInformation">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetTeacherInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewTeacherNames">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewTeacherNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sAssignCourse">
+      <soap:operation soapAction="http://tempuri.org/IService1/sAssignCourse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
