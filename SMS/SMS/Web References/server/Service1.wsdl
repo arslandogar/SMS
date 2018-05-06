@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService" />
+      <xsd:import schemaLocation="http://localhost:10842/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_sSetDefaultAdmin_InputMessage">
@@ -140,6 +141,12 @@
   <wsdl:message name="IService1_sGetStudentInformation_OutputMessage">
     <wsdl:part name="parameters" element="tns:sGetStudentInformationResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sViewAllCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:sViewAllCourses" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sViewAllCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sViewAllCoursesResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -234,6 +241,10 @@
     <wsdl:operation name="sGetStudentInformation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetStudentInformation" message="tns:IService1_sGetStudentInformation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetStudentInformationResponse" message="tns:IService1_sGetStudentInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sViewAllCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sViewAllCourses" message="tns:IService1_sViewAllCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sViewAllCoursesResponse" message="tns:IService1_sViewAllCourses_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -433,6 +444,15 @@
     </wsdl:operation>
     <wsdl:operation name="sGetStudentInformation">
       <soap:operation soapAction="http://tempuri.org/IService1/sGetStudentInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sViewAllCourses">
+      <soap:operation soapAction="http://tempuri.org/IService1/sViewAllCourses" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

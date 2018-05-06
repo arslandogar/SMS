@@ -75,5 +75,12 @@ namespace SMS
             temp.Show();
             this.Close();
         }
+
+        private void btnViewCourses_Click(object sender, EventArgs e)
+        {
+            frmAdminViewCourses temp = new frmAdminViewCourses();
+            temp.Show();
+            this.Close();
+        }
     }
 }

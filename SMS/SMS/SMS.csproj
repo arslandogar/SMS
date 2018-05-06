@@ -51,6 +51,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdminViewCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminViewCourses.Designer.cs">
+      <DependentUpon>frmAdminViewCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmAdminViewCourses.resx">
+      <DependentUpon>frmAdminViewCourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminAddCourse.resx">
       <DependentUpon>frmAdminAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +222,9 @@
     <None Include="Web References\server\CompositeType.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\server\Course.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\server\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -228,6 +240,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Web References\server\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\server\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

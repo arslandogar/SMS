@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class frmAdminAddCourse : Form
+    public partial class frmAdminViewCourses : Form
     {
-        public frmAdminAddCourse()
+        public frmAdminViewCourses()
         {
             InitializeComponent();
         }
@@ -52,25 +52,19 @@ namespace SMS
             this.Close();
         }
 
-        private void bAddCourse_Click(object sender, EventArgs e)
+        private void btnAddCourse_Click(object sender, EventArgs e)
         {
-            if(txtAddCourse.Text == "")
-            {
-                MessageBox.Show("Enter name of the course!");
-            } else
-            {
-                server.Service1 ser = new server.Service1();
-                ser.sAddCourse(txtAddCourse.Text);
-                MessageBox.Show(txtAddCourse.Text + " added to courses!");
-                txtAddCourse.Text = "";
-            }
-        }
-
-        private void btnViewCourses_Click(object sender, EventArgs e)
-        {
-            frmAdminViewCourses temp = new frmAdminViewCourses();
+            frmAdminAddCourse temp = new frmAdminAddCourse();
             temp.Show();
             this.Close();
+        }
+
+        private void frmAdminViewCourses_Load(object sender, EventArgs e)
+        {
+            server.Service1 ser = new server.Service1();
+            BindingSource source = new BindingSource();
+            source.DataSource = ser.sViewAllCourses();
+            dataGridView.DataSource = source; 
         }
     }
 }

@@ -288,5 +288,10 @@ namespace SMS_WcfService
             }
             return false;
         }
+
+        public List<Course> sViewAllCourses()
+        {
+            return CoursesDataClass.Courses;
+        }
     }
 }

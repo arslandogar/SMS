@@ -38,3 +38,4 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmParentLogin.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentLogin.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentProfile.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmParentMain.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminViewCourses.resources

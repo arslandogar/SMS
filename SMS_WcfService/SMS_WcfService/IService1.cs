@@ -80,6 +80,9 @@ namespace SMS_WcfService
         List<string> sGetStudentInformation();
 
         [OperationContract]
+        List<Course> sViewAllCourses();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

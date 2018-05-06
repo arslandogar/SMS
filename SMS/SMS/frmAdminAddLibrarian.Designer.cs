@@ -134,6 +134,7 @@
             this.btnViewCourses.TabIndex = 17;
             this.btnViewCourses.Text = "View Courses";
             this.btnViewCourses.UseVisualStyleBackColor = true;
+            this.btnViewCourses.Click += new System.EventHandler(this.btnViewCourses_Click);
             // 
             // btnAssignCourse
             // 

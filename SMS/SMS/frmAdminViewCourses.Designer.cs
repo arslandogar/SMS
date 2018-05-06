@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class frmAdminViewAttendanceReports
+    partial class frmAdminViewCourses
     {
         /// <summary>
         /// Required designer variable.
@@ -42,8 +42,6 @@
             this.btnViewStudents = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.cmbSelect = new System.Windows.Forms.ComboBox();
-            this.cbIsStudent = new System.Windows.Forms.CheckBox();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +65,7 @@
             this.panel.Location = new System.Drawing.Point(0, 0);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(200, 511);
-            this.panel.TabIndex = 11;
+            this.panel.TabIndex = 3;
             // 
             // btnLogout
             // 
@@ -90,13 +88,13 @@
             // 
             // btnViewAttendances
             // 
-            this.btnViewAttendances.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnViewAttendances.Location = new System.Drawing.Point(3, 340);
             this.btnViewAttendances.Name = "btnViewAttendances";
             this.btnViewAttendances.Size = new System.Drawing.Size(192, 35);
             this.btnViewAttendances.TabIndex = 19;
             this.btnViewAttendances.Text = "View Attenance Reports";
-            this.btnViewAttendances.UseVisualStyleBackColor = false;
+            this.btnViewAttendances.UseVisualStyleBackColor = true;
+            this.btnViewAttendances.Click += new System.EventHandler(this.btnViewAttendances_Click);
             // 
             // btnAddLibrarian
             // 
@@ -111,13 +109,13 @@
             // 
             // btnViewCourses
             // 
+            this.btnViewCourses.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnViewCourses.Location = new System.Drawing.Point(3, 258);
             this.btnViewCourses.Name = "btnViewCourses";
             this.btnViewCourses.Size = new System.Drawing.Size(192, 35);
             this.btnViewCourses.TabIndex = 17;
             this.btnViewCourses.Text = "View Courses";
-            this.btnViewCourses.UseVisualStyleBackColor = true;
-            this.btnViewCourses.Click += new System.EventHandler(this.btnViewCourses_Click);
+            this.btnViewCourses.UseVisualStyleBackColor = false;
             // 
             // btnAssignCourse
             // 
@@ -130,6 +128,7 @@
             // 
             // btnAddCourse
             // 
+            this.btnAddCourse.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCourse.Location = new System.Drawing.Point(3, 176);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(192, 35);
@@ -189,50 +188,27 @@
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(333, 95);
+            this.dataGridView.Location = new System.Drawing.Point(387, 103);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(335, 363);
-            this.dataGridView.TabIndex = 2;
+            this.dataGridView.Size = new System.Drawing.Size(209, 377);
+            this.dataGridView.TabIndex = 4;
             // 
-            // cmbSelect
-            // 
-            this.cmbSelect.FormattingEnabled = true;
-            this.cmbSelect.Location = new System.Drawing.Point(644, 40);
-            this.cmbSelect.Name = "cmbSelect";
-            this.cmbSelect.Size = new System.Drawing.Size(121, 21);
-            this.cmbSelect.TabIndex = 1;
-            this.cmbSelect.TextChanged += new System.EventHandler(this.cmbSelect_TextChanged);
-            // 
-            // cbIsStudent
-            // 
-            this.cbIsStudent.AutoSize = true;
-            this.cbIsStudent.Location = new System.Drawing.Point(333, 40);
-            this.cbIsStudent.Name = "cbIsStudent";
-            this.cbIsStudent.Size = new System.Drawing.Size(63, 17);
-            this.cbIsStudent.TabIndex = 0;
-            this.cbIsStudent.Text = "Student";
-            this.cbIsStudent.UseVisualStyleBackColor = true;
-            this.cbIsStudent.CheckedChanged += new System.EventHandler(this.cbIsStudent_CheckedChanged);
-            // 
-            // frmAdminViewAttendanceReports
+            // frmAdminViewCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 511);
-            this.Controls.Add(this.cbIsStudent);
-            this.Controls.Add(this.cmbSelect);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel);
             this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmAdminViewAttendanceReports";
+            this.Name = "frmAdminViewCourses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin - View Attendance Reports";
-            this.Load += new System.EventHandler(this.frmAdminViewAttendanceReports_Load);
+            this.Text = "Admin - Add Course";
+            this.Load += new System.EventHandler(this.frmAdminViewCourses_Load);
             this.panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -252,7 +228,5 @@
         private System.Windows.Forms.Button btnAddTeacher;
         private System.Windows.Forms.Button btnMarkAttendance;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.ComboBox cmbSelect;
-        private System.Windows.Forms.CheckBox cbIsStudent;
     }
 }
