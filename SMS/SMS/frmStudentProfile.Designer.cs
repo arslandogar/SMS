@@ -77,7 +77,7 @@
             this.btSendMessages.TabIndex = 7;
             this.btSendMessages.Text = "Send Messages";
             this.btSendMessages.UseVisualStyleBackColor = true;
-            this.btSendMessages.Click += new System.EventHandler(this.button4_Click);
+            this.btSendMessages.Click += new System.EventHandler(this.btSendMessages_Click);
             // 
             // btViewBooks
             // 
@@ -87,6 +87,7 @@
             this.btViewBooks.TabIndex = 6;
             this.btViewBooks.Text = "View Books";
             this.btViewBooks.UseVisualStyleBackColor = true;
+            this.btViewBooks.Click += new System.EventHandler(this.btViewBooks_Click);
             // 
             // btAttendanceReports
             // 
@@ -96,6 +97,7 @@
             this.btAttendanceReports.TabIndex = 5;
             this.btAttendanceReports.Text = "View Attendance Report";
             this.btAttendanceReports.UseVisualStyleBackColor = true;
+            this.btAttendanceReports.Click += new System.EventHandler(this.btAttendanceReports_Click);
             // 
             // btLogout
             // 

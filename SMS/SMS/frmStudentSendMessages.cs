@@ -64,5 +64,26 @@ namespace SMS
             string t = cmbSelectTeacher.Text.Substring(0, i);
             ser.sSendMessageToTeacher(richTextBox.Text, ser.sGetStudentInformation()[0], t);
         }
+
+        private void btAttendanceReports_Click(object sender, EventArgs e)
+        {
+            frmStudentViewAttendanceReport temp = new frmStudentViewAttendanceReport();
+            temp.Show();
+            this.Close();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frmStudentProfile temp = new frmStudentProfile();
+            temp.Show();
+            this.Close();
+        }
+
+        private void btViewBooks_Click(object sender, EventArgs e)
+        {
+            frmStudentViewBooks temp = new frmStudentViewBooks();
+            temp.Show();
+            this.Close();
+        }
     }
 }

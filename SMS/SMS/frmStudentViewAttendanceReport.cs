@@ -10,24 +10,11 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class frmStudentProfile : Form
+    public partial class frmStudentViewAttendanceReport : Form
     {
-        public frmStudentProfile()
+        public frmStudentViewAttendanceReport()
         {
             InitializeComponent();
-        }
-
-        private void frmStudentProfile_Load(object sender, EventArgs e)
-        {
-            server.Service1 ser = new server.Service1();
-            lbName.Text = ser.sGetStudentInformation()[0];
-            lbGender.Text = ser.sGetStudentInformation()[1];
-            llbParentName.Text = ser.sGetStudentInformation()[2];
-            lbDob.Text = ser.sGetStudentInformation()[3];
-            lbRollNo.Text = ser.sGetStudentInformation()[4];
-            lbEmail.Text =  ser.sGetStudentInformation()[5];
-            lbPhone.Text = ser.sGetStudentInformation()[6];
-            txtAddress.Text = ser.sGetStudentInformation()[7];
         }
 
         private void btLogout_Click(object sender, EventArgs e)
@@ -37,9 +24,18 @@ namespace SMS
             this.Close();
         }
 
-        private void btAttendanceReports_Click(object sender, EventArgs e)
+        private void frmStudentViewAttendanceReport_Load(object sender, EventArgs e)
         {
-            frmStudentViewAttendanceReport temp = new frmStudentViewAttendanceReport();
+            server.Service1 ser = new server.Service1();
+            BindingSource source = new BindingSource();
+            string roll_no = ser.sGetStudentInformation()[4];
+            source.DataSource = ser.sViewAttendances(roll_no);
+            dataGridView.DataSource = source;
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            frmStudentProfile temp = new frmStudentProfile();
             temp.Show();
             this.Close();
         }

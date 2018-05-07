@@ -105,6 +105,18 @@
     <Compile Include="frmAdminAddStudent.Designer.cs">
       <DependentUpon>frmAdminAddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentViewBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentViewBooks.Designer.cs">
+      <DependentUpon>frmStudentViewBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentViewAttendanceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentViewAttendanceReport.Designer.cs">
+      <DependentUpon>frmStudentViewAttendanceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentSendMessages.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminAddStudent.resx">
       <DependentUpon>frmAdminAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentViewBooks.resx">
+      <DependentUpon>frmStudentViewBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentViewAttendanceReport.resx">
+      <DependentUpon>frmStudentViewAttendanceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentSendMessages.resx">
       <DependentUpon>frmStudentSendMessages.cs</DependentUpon>

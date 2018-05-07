@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class frmStudentSendMessages
+    partial class frmStudentViewBooks
     {
         /// <summary>
         /// Required designer variable.
@@ -34,14 +34,12 @@
             this.btAttendanceReports = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.cmbSelectTeacher = new System.Windows.Forms.ComboBox();
-            this.btSend = new System.Windows.Forms.Button();
-            this.llbReadMessages = new System.Windows.Forms.LinkLabel();
-            this.panelInbox = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel.SuspendLayout();
-            this.panelInbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,26 +58,27 @@
             // 
             // btSendMessages
             // 
-            this.btSendMessages.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btSendMessages.Location = new System.Drawing.Point(501, 3);
             this.btSendMessages.Name = "btSendMessages";
             this.btSendMessages.Size = new System.Drawing.Size(160, 51);
             this.btSendMessages.TabIndex = 7;
             this.btSendMessages.Text = "Send Messages";
-            this.btSendMessages.UseVisualStyleBackColor = false;
+            this.btSendMessages.UseVisualStyleBackColor = true;
+            this.btSendMessages.Click += new System.EventHandler(this.btSendMessages_Click);
             // 
             // btViewBooks
             // 
+            this.btViewBooks.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btViewBooks.Location = new System.Drawing.Point(335, 3);
             this.btViewBooks.Name = "btViewBooks";
             this.btViewBooks.Size = new System.Drawing.Size(160, 51);
             this.btViewBooks.TabIndex = 6;
             this.btViewBooks.Text = "View Books";
-            this.btViewBooks.UseVisualStyleBackColor = true;
-            this.btViewBooks.Click += new System.EventHandler(this.btViewBooks_Click);
+            this.btViewBooks.UseVisualStyleBackColor = false;
             // 
             // btAttendanceReports
             // 
+            this.btAttendanceReports.BackColor = System.Drawing.SystemColors.Control;
             this.btAttendanceReports.Location = new System.Drawing.Point(169, 3);
             this.btAttendanceReports.Name = "btAttendanceReports";
             this.btAttendanceReports.Size = new System.Drawing.Size(160, 51);
@@ -109,80 +108,68 @@
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
-            // richTextBox
+            // label1
             // 
-            this.richTextBox.Location = new System.Drawing.Point(106, 160);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(172, 96);
-            this.richTextBox.TabIndex = 8;
-            this.richTextBox.Text = "";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(82, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Search By Title:";
             // 
-            // cmbSelectTeacher
+            // label2
             // 
-            this.cmbSelectTeacher.FormattingEnabled = true;
-            this.cmbSelectTeacher.Location = new System.Drawing.Point(106, 286);
-            this.cmbSelectTeacher.Name = "cmbSelectTeacher";
-            this.cmbSelectTeacher.Size = new System.Drawing.Size(121, 21);
-            this.cmbSelectTeacher.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(489, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Search By Author:";
             // 
-            // btSend
+            // txtTitle
             // 
-            this.btSend.Location = new System.Drawing.Point(106, 339);
-            this.btSend.Name = "btSend";
-            this.btSend.Size = new System.Drawing.Size(75, 23);
-            this.btSend.TabIndex = 10;
-            this.btSend.Text = "Send";
-            this.btSend.UseVisualStyleBackColor = true;
-            this.btSend.Click += new System.EventHandler(this.btSend_Click);
+            this.txtTitle.Location = new System.Drawing.Point(170, 130);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.TabIndex = 10;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
-            // llbReadMessages
+            // txtAuthor
             // 
-            this.llbReadMessages.AutoSize = true;
-            this.llbReadMessages.Location = new System.Drawing.Point(738, 489);
-            this.llbReadMessages.Name = "llbReadMessages";
-            this.llbReadMessages.Size = new System.Drawing.Size(84, 13);
-            this.llbReadMessages.TabIndex = 11;
-            this.llbReadMessages.TabStop = true;
-            this.llbReadMessages.Text = "Read Messages";
-            this.llbReadMessages.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbReadMessages_LinkClicked);
-            // 
-            // panelInbox
-            // 
-            this.panelInbox.Controls.Add(this.dataGridView);
-            this.panelInbox.Location = new System.Drawing.Point(360, 226);
-            this.panelInbox.Name = "panelInbox";
-            this.panelInbox.Size = new System.Drawing.Size(453, 245);
-            this.panelInbox.TabIndex = 18;
+            this.txtAuthor.Location = new System.Drawing.Point(588, 130);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(100, 20);
+            this.txtAuthor.TabIndex = 11;
+            this.txtAuthor.TextChanged += new System.EventHandler(this.txtAuthor_TextChanged);
             // 
             // dataGridView
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(17, 8);
+            this.dataGridView.Location = new System.Drawing.Point(284, 183);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(420, 222);
-            this.dataGridView.TabIndex = 0;
+            this.dataGridView.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView.TabIndex = 12;
             // 
-            // frmStudentSendMessages
+            // frmStudentViewBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 511);
-            this.Controls.Add(this.panelInbox);
-            this.Controls.Add(this.llbReadMessages);
-            this.Controls.Add(this.btSend);
-            this.Controls.Add(this.cmbSelectTeacher);
-            this.Controls.Add(this.richTextBox);
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.txtAuthor);
+            this.Controls.Add(this.txtTitle);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel);
             this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmStudentSendMessages";
+            this.Name = "frmStudentViewBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Student - Send Messages";
-            this.Load += new System.EventHandler(this.frmStudentSendMessages_Load);
+            this.Text = "Student - View Books";
+            this.Load += new System.EventHandler(this.frmStudentViewBooks_Load);
             this.panel.ResumeLayout(false);
-            this.panelInbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,11 +184,10 @@
         private System.Windows.Forms.Button btAttendanceReports;
         private System.Windows.Forms.Button btLogout;
         private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.RichTextBox richTextBox;
-        private System.Windows.Forms.ComboBox cmbSelectTeacher;
-        private System.Windows.Forms.Button btSend;
-        private System.Windows.Forms.LinkLabel llbReadMessages;
-        private System.Windows.Forms.Panel panelInbox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.DataGridView dataGridView;
     }
 }
