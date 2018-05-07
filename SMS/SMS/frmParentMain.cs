@@ -68,5 +68,12 @@ namespace SMS
                 llbReadMessages.Text = "Read Messages";
             }
         }
+
+        private void btViewReport_Click(object sender, EventArgs e)
+        {
+            frmParentViewAttendanceReport temp = new frmParentViewAttendanceReport();
+            temp.Show();
+            this.Close();
+        }
     }
 }

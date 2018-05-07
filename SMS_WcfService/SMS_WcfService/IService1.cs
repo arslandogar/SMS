@@ -128,6 +128,12 @@ namespace SMS_WcfService
         bool sMarkAttendanceStudent(string roll_no, string date, string status);
 
         [OperationContract]
+        List<Attendance> sViewChildAttendance();
+
+        [OperationContract]
+        List<string> sOwnCourseNames();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

@@ -105,6 +105,10 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sMarkAttendanceStudentOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sViewChildAttendanceOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sOwnCourseNamesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -258,6 +262,12 @@ namespace SMS.server {
         
         /// <remarks/>
         public event sMarkAttendanceStudentCompletedEventHandler sMarkAttendanceStudentCompleted;
+        
+        /// <remarks/>
+        public event sViewChildAttendanceCompletedEventHandler sViewChildAttendanceCompleted;
+        
+        /// <remarks/>
+        public event sOwnCourseNamesCompletedEventHandler sOwnCourseNamesCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -1460,6 +1470,64 @@ namespace SMS.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sViewChildAttendance", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Attendance[] sViewChildAttendance() {
+            object[] results = this.Invoke("sViewChildAttendance", new object[0]);
+            return ((Attendance[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sViewChildAttendanceAsync() {
+            this.sViewChildAttendanceAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sViewChildAttendanceAsync(object userState) {
+            if ((this.sViewChildAttendanceOperationCompleted == null)) {
+                this.sViewChildAttendanceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsViewChildAttendanceOperationCompleted);
+            }
+            this.InvokeAsync("sViewChildAttendance", new object[0], this.sViewChildAttendanceOperationCompleted, userState);
+        }
+        
+        private void OnsViewChildAttendanceOperationCompleted(object arg) {
+            if ((this.sViewChildAttendanceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sViewChildAttendanceCompleted(this, new sViewChildAttendanceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sOwnCourseNames", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sOwnCourseNames() {
+            object[] results = this.Invoke("sOwnCourseNames", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sOwnCourseNamesAsync() {
+            this.sOwnCourseNamesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sOwnCourseNamesAsync(object userState) {
+            if ((this.sOwnCourseNamesOperationCompleted == null)) {
+                this.sOwnCourseNamesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsOwnCourseNamesOperationCompleted);
+            }
+            this.InvokeAsync("sOwnCourseNames", new object[0], this.sOwnCourseNamesOperationCompleted, userState);
+        }
+        
+        private void OnsOwnCourseNamesOperationCompleted(object arg) {
+            if ((this.sOwnCourseNamesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sOwnCourseNamesCompleted(this, new sOwnCourseNamesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetDataUsingDataContract", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public CompositeType GetDataUsingDataContract([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CompositeType composite) {
@@ -2444,6 +2512,58 @@ namespace SMS.server {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sViewChildAttendanceCompletedEventHandler(object sender, sViewChildAttendanceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sViewChildAttendanceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sViewChildAttendanceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Attendance[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Attendance[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sOwnCourseNamesCompletedEventHandler(object sender, sOwnCourseNamesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sOwnCourseNamesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sOwnCourseNamesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
             }
         }
     }

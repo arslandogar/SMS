@@ -105,6 +105,12 @@
     <Compile Include="frmAdminAddStudent.Designer.cs">
       <DependentUpon>frmAdminAddStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmParentViewAttendanceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmParentViewAttendanceReport.Designer.cs">
+      <DependentUpon>frmParentViewAttendanceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentViewBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,18 @@
     </Compile>
     <Compile Include="frmStudentSendMessages.Designer.cs">
       <DependentUpon>frmStudentSendMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeacherCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherCourses.Designer.cs">
+      <DependentUpon>frmTeacherCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeacherAttendanceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherAttendanceReport.Designer.cs">
+      <DependentUpon>frmTeacherAttendanceReport.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTeacherSendMessages.cs">
       <SubType>Form</SubType>
@@ -236,6 +254,9 @@
     <EmbeddedResource Include="frmAdminAddStudent.resx">
       <DependentUpon>frmAdminAddStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmParentViewAttendanceReport.resx">
+      <DependentUpon>frmParentViewAttendanceReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStudentViewBooks.resx">
       <DependentUpon>frmStudentViewBooks.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +265,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentSendMessages.resx">
       <DependentUpon>frmStudentSendMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherCourses.resx">
+      <DependentUpon>frmTeacherCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherAttendanceReport.resx">
+      <DependentUpon>frmTeacherAttendanceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTeacherSendMessages.resx">
       <DependentUpon>frmTeacherSendMessages.cs</DependentUpon>

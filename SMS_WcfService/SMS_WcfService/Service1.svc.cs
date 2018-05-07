@@ -475,5 +475,21 @@ namespace SMS_WcfService
             }
             return false;
         }
+
+        public List<Attendance> sViewChildAttendance()
+        {
+            string roll_no = StudentsDataClass.Current_parent.Child.Roll_no;
+            return sViewAttendances(roll_no);
+        }
+
+        public List<string> sOwnCourseNames()
+        {
+            List<string> temp = new List<string>();
+            foreach(Course c in EmployeesDataClass.Current_teacher.AssignedCourses)
+            {
+                temp.Add(c.Title);
+            }
+            return temp;
+        }
     }
 }

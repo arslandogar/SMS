@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class frmTeacherProfile : Form
+    public partial class frmTeacherAttendanceReport : Form
     {
-        public frmTeacherProfile()
+        public frmTeacherAttendanceReport()
         {
             InitializeComponent();
         }
@@ -24,22 +24,9 @@ namespace SMS
             this.Close();
         }
 
-        private void frmTeacherProfile_Load(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
         {
-            server.Service1 ser = new server.Service1();
-            lbName.Text = ser.sGetTeacherInformation()[0];
-            lbGender.Text = ser.sGetTeacherInformation()[1];
-            lbDob.Text = ser.sGetTeacherInformation()[2];
-            lbEmployeeNo.Text = ser.sGetTeacherInformation()[3];
-            lbJoiningDate.Text = ser.sGetTeacherInformation()[4];
-            lbEmail.Text = ser.sGetTeacherInformation()[5];
-            lbPhone.Text = ser.sGetTeacherInformation()[6];
-            txtAddress.Text = ser.sGetTeacherInformation()[7];
-        }
-
-        private void btMarkAttendance_Click(object sender, EventArgs e)
-        {
-            frmTeacherMarkAttendance temp = new frmTeacherMarkAttendance();
+            frmTeacherProfile temp = new frmTeacherProfile();
             temp.Show();
             this.Close();
         }
@@ -51,6 +38,15 @@ namespace SMS
             this.Close();
         }
 
+        private void frmTeacherAttendanceReport_Load(object sender, EventArgs e)
+        {
+            server.Service1 ser = new server.Service1();
+            string employee_no = ser.sGetTeacherInformation()[3];
+            BindingSource source = new BindingSource();
+            source.DataSource = ser.sViewAttendances(employee_no);
+            dataGridView.DataSource = source;
+        }
+
         private void btCourses_Click(object sender, EventArgs e)
         {
             frmTeacherCourses temp = new frmTeacherCourses();
@@ -58,9 +54,9 @@ namespace SMS
             this.Close();
         }
 
-        private void btAttendanceReport_Click(object sender, EventArgs e)
+        private void btMarkAttendance_Click(object sender, EventArgs e)
         {
-            frmTeacherAttendanceReport temp = new frmTeacherAttendanceReport();
+            frmTeacherMarkAttendance temp = new frmTeacherMarkAttendance();
             temp.Show();
             this.Close();
         }

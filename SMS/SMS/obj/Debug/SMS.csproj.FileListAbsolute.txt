@@ -49,3 +49,6 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherMarkAttendance.r
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherSendMessages.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentViewAttendanceReport.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentViewBooks.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmParentViewAttendanceReport.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherCourses.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherAttendanceReport.resources

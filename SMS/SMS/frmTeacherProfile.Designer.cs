@@ -89,6 +89,7 @@
             this.btAttendanceReport.TabIndex = 7;
             this.btAttendanceReport.Text = "Attendance Report";
             this.btAttendanceReport.UseVisualStyleBackColor = true;
+            this.btAttendanceReport.Click += new System.EventHandler(this.btAttendanceReport_Click);
             // 
             // btMarkAttendance
             // 
@@ -108,6 +109,7 @@
             this.btCourses.TabIndex = 5;
             this.btCourses.Text = "Courses";
             this.btCourses.UseVisualStyleBackColor = true;
+            this.btCourses.Click += new System.EventHandler(this.btCourses_Click);
             // 
             // btLogout
             // 

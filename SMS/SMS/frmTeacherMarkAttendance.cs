@@ -61,5 +61,19 @@ namespace SMS
             temp.Show();
             this.Close();
         }
+
+        private void btCourses_Click(object sender, EventArgs e)
+        {
+            frmTeacherCourses temp = new frmTeacherCourses();
+            temp.Show();
+            this.Close();
+        }
+
+        private void btAttendanceReport_Click(object sender, EventArgs e)
+        {
+            frmTeacherAttendanceReport temp = new frmTeacherAttendanceReport();
+            temp.Show();
+            this.Close();
+        }
     }
 }

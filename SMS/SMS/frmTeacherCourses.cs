@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class frmTeacherProfile : Form
+    public partial class frmTeacherCourses : Form
     {
-        public frmTeacherProfile()
+        public frmTeacherCourses()
         {
             InitializeComponent();
         }
@@ -24,22 +24,9 @@ namespace SMS
             this.Close();
         }
 
-        private void frmTeacherProfile_Load(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
         {
-            server.Service1 ser = new server.Service1();
-            lbName.Text = ser.sGetTeacherInformation()[0];
-            lbGender.Text = ser.sGetTeacherInformation()[1];
-            lbDob.Text = ser.sGetTeacherInformation()[2];
-            lbEmployeeNo.Text = ser.sGetTeacherInformation()[3];
-            lbJoiningDate.Text = ser.sGetTeacherInformation()[4];
-            lbEmail.Text = ser.sGetTeacherInformation()[5];
-            lbPhone.Text = ser.sGetTeacherInformation()[6];
-            txtAddress.Text = ser.sGetTeacherInformation()[7];
-        }
-
-        private void btMarkAttendance_Click(object sender, EventArgs e)
-        {
-            frmTeacherMarkAttendance temp = new frmTeacherMarkAttendance();
+            frmTeacherProfile temp = new frmTeacherProfile();
             temp.Show();
             this.Close();
         }
@@ -51,9 +38,17 @@ namespace SMS
             this.Close();
         }
 
-        private void btCourses_Click(object sender, EventArgs e)
+        private void frmTeacherCourses_Load(object sender, EventArgs e)
         {
-            frmTeacherCourses temp = new frmTeacherCourses();
+            server.Service1 ser = new server.Service1();
+            BindingSource source = new BindingSource();
+            source.DataSource = ser.sOwnCourseNames();
+            dataGridView.DataSource = source;
+        }
+
+        private void btMarkAttendance_Click(object sender, EventArgs e)
+        {
+            frmTeacherMarkAttendance temp = new frmTeacherMarkAttendance();
             temp.Show();
             this.Close();
         }

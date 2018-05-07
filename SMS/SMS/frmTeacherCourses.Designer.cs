@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class frmTeacherMarkAttendance
+    partial class frmTeacherCourses
     {
         /// <summary>
         /// Required designer variable.
@@ -35,11 +35,9 @@
             this.btCourses = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.cmbSelectStudent = new System.Windows.Forms.ComboBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.btMark = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -68,6 +66,7 @@
             // 
             // btAttendanceReport
             // 
+            this.btAttendanceReport.BackColor = System.Drawing.SystemColors.Control;
             this.btAttendanceReport.Location = new System.Drawing.Point(417, 3);
             this.btAttendanceReport.Name = "btAttendanceReport";
             this.btAttendanceReport.Size = new System.Drawing.Size(132, 51);
@@ -78,23 +77,24 @@
             // 
             // btMarkAttendance
             // 
-            this.btMarkAttendance.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btMarkAttendance.BackColor = System.Drawing.SystemColors.Control;
             this.btMarkAttendance.Location = new System.Drawing.Point(279, 3);
             this.btMarkAttendance.Name = "btMarkAttendance";
             this.btMarkAttendance.Size = new System.Drawing.Size(132, 51);
             this.btMarkAttendance.TabIndex = 6;
             this.btMarkAttendance.Text = "Mark Attendance";
-            this.btMarkAttendance.UseVisualStyleBackColor = false;
+            this.btMarkAttendance.UseVisualStyleBackColor = true;
+            this.btMarkAttendance.Click += new System.EventHandler(this.btMarkAttendance_Click);
             // 
             // btCourses
             // 
+            this.btCourses.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btCourses.Location = new System.Drawing.Point(141, 3);
             this.btCourses.Name = "btCourses";
             this.btCourses.Size = new System.Drawing.Size(132, 51);
             this.btCourses.TabIndex = 5;
             this.btCourses.Text = "Courses";
-            this.btCourses.UseVisualStyleBackColor = true;
-            this.btCourses.Click += new System.EventHandler(this.btCourses_Click);
+            this.btCourses.UseVisualStyleBackColor = false;
             // 
             // btLogout
             // 
@@ -117,60 +117,31 @@
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
-            // cmbSelectStudent
+            // dataGridView
             // 
-            this.cmbSelectStudent.FormattingEnabled = true;
-            this.cmbSelectStudent.Location = new System.Drawing.Point(359, 146);
-            this.cmbSelectStudent.Name = "cmbSelectStudent";
-            this.cmbSelectStudent.Size = new System.Drawing.Size(121, 21);
-            this.cmbSelectStudent.TabIndex = 8;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(280, 119);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(230, 150);
+            this.dataGridView.TabIndex = 9;
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Present",
-            "Absent",
-            "Leave"});
-            this.cmbStatus.Location = new System.Drawing.Point(359, 194);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(121, 21);
-            this.cmbStatus.TabIndex = 9;
-            // 
-            // btMark
-            // 
-            this.btMark.Location = new System.Drawing.Point(359, 279);
-            this.btMark.Name = "btMark";
-            this.btMark.Size = new System.Drawing.Size(101, 23);
-            this.btMark.TabIndex = 10;
-            this.btMark.Text = "Mark Attendance";
-            this.btMark.UseVisualStyleBackColor = true;
-            this.btMark.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(359, 235);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // frmTeacherMarkAttendance
+            // frmTeacherCourses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 511);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btMark);
-            this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.cmbSelectStudent);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel);
             this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmTeacherMarkAttendance";
+            this.Name = "frmTeacherCourses";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Teacher - Mark Attendance";
-            this.Load += new System.EventHandler(this.frmTeacherMarkAttendance_Load);
+            this.Text = "Teacher - Courses";
+            this.Load += new System.EventHandler(this.frmTeacherCourses_Load);
             this.panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,9 +155,6 @@
         private System.Windows.Forms.Button btLogout;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btSendMessages;
-        private System.Windows.Forms.ComboBox cmbSelectStudent;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.Button btMark;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView;
     }
 }
