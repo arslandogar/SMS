@@ -111,6 +111,18 @@
     <Compile Include="frmStudentSendMessages.Designer.cs">
       <DependentUpon>frmStudentSendMessages.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTeacherSendMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherSendMessages.Designer.cs">
+      <DependentUpon>frmTeacherSendMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTeacherMarkAttendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTeacherMarkAttendance.Designer.cs">
+      <DependentUpon>frmTeacherMarkAttendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTeacherProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +226,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentSendMessages.resx">
       <DependentUpon>frmStudentSendMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherSendMessages.resx">
+      <DependentUpon>frmTeacherSendMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTeacherMarkAttendance.resx">
+      <DependentUpon>frmTeacherMarkAttendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTeacherProfile.resx">
       <DependentUpon>frmTeacherProfile.cs</DependentUpon>

@@ -510,6 +510,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="sMarkAttendanceStudent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="roll_no" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sMarkAttendanceStudentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sMarkAttendanceStudentResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>

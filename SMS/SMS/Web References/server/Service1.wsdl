@@ -230,6 +230,12 @@
   <wsdl:message name="IService1_sGetParentInbox_OutputMessage">
     <wsdl:part name="parameters" element="tns:sGetParentInboxResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sMarkAttendanceStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:sMarkAttendanceStudent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sMarkAttendanceStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sMarkAttendanceStudentResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -384,6 +390,10 @@
     <wsdl:operation name="sGetParentInbox">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetParentInbox" message="tns:IService1_sGetParentInbox_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetParentInboxResponse" message="tns:IService1_sGetParentInbox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sMarkAttendanceStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sMarkAttendanceStudent" message="tns:IService1_sMarkAttendanceStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sMarkAttendanceStudentResponse" message="tns:IService1_sMarkAttendanceStudent_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -718,6 +728,15 @@
     </wsdl:operation>
     <wsdl:operation name="sGetParentInbox">
       <soap:operation soapAction="http://tempuri.org/IService1/sGetParentInbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sMarkAttendanceStudent">
+      <soap:operation soapAction="http://tempuri.org/IService1/sMarkAttendanceStudent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

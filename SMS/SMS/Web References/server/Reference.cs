@@ -103,6 +103,8 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sGetParentInboxOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sMarkAttendanceStudentOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -253,6 +255,9 @@ namespace SMS.server {
         
         /// <remarks/>
         public event sGetParentInboxCompletedEventHandler sGetParentInboxCompleted;
+        
+        /// <remarks/>
+        public event sMarkAttendanceStudentCompletedEventHandler sMarkAttendanceStudentCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -1421,6 +1426,40 @@ namespace SMS.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sMarkAttendanceStudent", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sMarkAttendanceStudent([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string roll_no, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string date, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string status, out bool sMarkAttendanceStudentResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool sMarkAttendanceStudentResultSpecified) {
+            object[] results = this.Invoke("sMarkAttendanceStudent", new object[] {
+                        roll_no,
+                        date,
+                        status});
+            sMarkAttendanceStudentResult = ((bool)(results[0]));
+            sMarkAttendanceStudentResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void sMarkAttendanceStudentAsync(string roll_no, string date, string status) {
+            this.sMarkAttendanceStudentAsync(roll_no, date, status, null);
+        }
+        
+        /// <remarks/>
+        public void sMarkAttendanceStudentAsync(string roll_no, string date, string status, object userState) {
+            if ((this.sMarkAttendanceStudentOperationCompleted == null)) {
+                this.sMarkAttendanceStudentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsMarkAttendanceStudentOperationCompleted);
+            }
+            this.InvokeAsync("sMarkAttendanceStudent", new object[] {
+                        roll_no,
+                        date,
+                        status}, this.sMarkAttendanceStudentOperationCompleted, userState);
+        }
+        
+        private void OnsMarkAttendanceStudentOperationCompleted(object arg) {
+            if ((this.sMarkAttendanceStudentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sMarkAttendanceStudentCompleted(this, new sMarkAttendanceStudentCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetDataUsingDataContract", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public CompositeType GetDataUsingDataContract([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CompositeType composite) {
@@ -2371,6 +2410,40 @@ namespace SMS.server {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Message[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sMarkAttendanceStudentCompletedEventHandler(object sender, sMarkAttendanceStudentCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sMarkAttendanceStudentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sMarkAttendanceStudentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool sMarkAttendanceStudentResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool sMarkAttendanceStudentResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
             }
         }
     }

@@ -125,6 +125,9 @@ namespace SMS_WcfService
         List<Message> sGetParentInbox();
 
         [OperationContract]
+        bool sMarkAttendanceStudent(string roll_no, string date, string status);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

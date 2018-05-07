@@ -85,14 +85,16 @@ namespace SMS
             server.Service1 ser = new server.Service1();
             BindingSource id_source = new BindingSource();
             BindingSource rollNo_source = new BindingSource();
+            BindingSource rollNoP_source = new BindingSource();
             BindingSource inbox = new BindingSource();
             id_source.DataSource = ser.sViewTeacherNames();
             rollNo_source.DataSource = ser.sViewRollNumbers();
+            rollNoP_source.DataSource = ser.sViewRollNumbers();
             dataGridView.DataSource = inbox;
             inbox.DataSource = ser.sGetAdminInbox();
             cmbSelectTeacher.DataSource = id_source;
             cmbSelectStudent.DataSource = rollNo_source;
-            cmbSelectParent.DataSource = rollNo_source;
+            cmbSelectParent.DataSource = rollNoP_source;
             cmbSelectTeacher.Text = "Select Teacher";
             cmbSelectStudent.Text = "Select Student";
             cmbSelectParent.Text = "Select Child's roll no.";

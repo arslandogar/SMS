@@ -36,5 +36,19 @@ namespace SMS
             lbPhone.Text = ser.sGetTeacherInformation()[6];
             txtAddress.Text = ser.sGetTeacherInformation()[7];
         }
+
+        private void btMarkAttendance_Click(object sender, EventArgs e)
+        {
+            frmTeacherMarkAttendance temp = new frmTeacherMarkAttendance();
+            temp.Show();
+            this.Close();
+        }
+
+        private void btSendMessages_Click(object sender, EventArgs e)
+        {
+            frmTeacherSendMessages temp = new frmTeacherSendMessages();
+            temp.Show();
+            this.Close();
+        }
     }
 }

@@ -459,5 +459,21 @@ namespace SMS_WcfService
         {
             return StudentsDataClass.Current_parent.Inbox;
         }
+
+        public bool sMarkAttendanceStudent(string roll_no, string date, string status)
+        {
+            Attendance attendance = new Attendance();
+            attendance.Date = date;
+            attendance.Status = status;
+            foreach(Student s in StudentsDataClass.Students)
+            {
+                if(s.Roll_no == roll_no)
+                {
+                    s.addAttendance(attendance);
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

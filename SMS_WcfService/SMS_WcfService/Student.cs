@@ -14,7 +14,7 @@ namespace SMS_WcfService
 
         public void addAttendance(Attendance a)
         {
-
+            attendances.Add(a);
         }
 
         public void addCourse(Course c)

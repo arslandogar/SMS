@@ -51,6 +51,8 @@ namespace SMS
             int i = cmbSelectTeacher.Text.IndexOf(':');
             string t = cmbSelectTeacher.Text.Substring(0, i);
             ser.sSendMessageToTeacher(richTextBox.Text, ser.sGetParentInformation()[0], t);
+            MessageBox.Show("Message sent!");
+            reset();
         }
 
         private void llbReadMessages_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
