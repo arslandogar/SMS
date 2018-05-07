@@ -87,5 +87,12 @@ namespace SMS
             temp.Show();
             this.Close();
         }
+
+        private void btnSendMessages_Click(object sender, EventArgs e)
+        {
+            frmAdminSendMessages temp = new frmAdminSendMessages();
+            temp.Show();
+            this.Close();
+        }
     }
 }

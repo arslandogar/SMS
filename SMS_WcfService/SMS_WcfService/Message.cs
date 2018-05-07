@@ -8,7 +8,7 @@ namespace SMS_WcfService
     public class Message
     {
         private string message;
-        private Person sender;
+        private string sender;
 
         public string MessageText
         {
@@ -23,7 +23,7 @@ namespace SMS_WcfService
             }
         }
 
-        public Person Sender
+        public string Sender
         {
             get
             {

@@ -380,5 +380,84 @@ namespace SMS_WcfService
                 }
             }
         }
+
+        public void sSendMessageToTeacher(string message, string sender, string teacher_id)
+        {
+            Message msg = new Message();
+            msg.MessageText = message;
+            msg.Sender = sender;
+            foreach(Teacher t in EmployeesDataClass.Teachers)
+            {
+                if(t.Employee_no == teacher_id)
+                {
+                    t.ReceiveMessage(msg);
+                }
+            }
+        }
+
+        public void sSendMessageToParent(string message, string sender, string child_roll_no)
+        {
+            Message msg = new Message();
+            msg.MessageText = message;
+            msg.Sender = sender;
+            foreach(Student s in StudentsDataClass.Students)
+            {
+                if(s.Roll_no == child_roll_no)
+                {
+                    s.Parent.ReceiveMessage(msg);
+                }
+            }
+        }
+
+        public void sSendMessageToAdmin(string message, string sender)
+        {
+            Message msg = new Message();
+            msg.MessageText = message;
+            msg.Sender = sender;
+            AdminDataClass.admin.ReceiveMessage(msg);
+        }
+
+        public void sSendMessageToStudent(string message, string sender, string roll_no)
+        {
+            Message msg = new Message();
+            msg.MessageText = message;
+            msg.Sender = sender;
+            foreach (Student s in StudentsDataClass.Students)
+            {
+                if (s.Roll_no == roll_no)
+                {
+                    s.ReceiveMessage(msg);
+                }
+            }
+        }
+
+        public List<string> sGetParentInformation()
+        {
+            List<string> temp = new List<string>();
+            temp.Add(StudentsDataClass.Current_parent.Name);
+            temp.Add(StudentsDataClass.Current_parent.Cnic);
+            temp.Add(StudentsDataClass.Current_parent.Mobile_no);
+            return temp;
+        }
+
+        public List<Message> sGetAdminInbox()
+        {
+            return AdminDataClass.admin.Inbox;
+        }
+
+        public List<Message> sGetTeacherInbox()
+        {
+            return EmployeesDataClass.Current_teacher.Inbox;
+        }
+
+        public List<Message> sGetStudentInbox()
+        {
+            return StudentsDataClass.Current_student.Inbox;
+        }
+
+        public List<Message> sGetParentInbox()
+        {
+            return StudentsDataClass.Current_parent.Inbox;
+        }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
+            this.btSendMessages = new System.Windows.Forms.Button();
+            this.btViewBooks = new System.Windows.Forms.Button();
+            this.btAttendanceReports = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,15 +59,43 @@
             // panel
             // 
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel.Controls.Add(this.button4);
-            this.panel.Controls.Add(this.button3);
-            this.panel.Controls.Add(this.button1);
+            this.panel.Controls.Add(this.btSendMessages);
+            this.panel.Controls.Add(this.btViewBooks);
+            this.panel.Controls.Add(this.btAttendanceReports);
             this.panel.Controls.Add(this.btLogout);
             this.panel.Controls.Add(this.btnProfile);
             this.panel.Location = new System.Drawing.Point(0, 1);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(832, 59);
             this.panel.TabIndex = 7;
+            // 
+            // btSendMessages
+            // 
+            this.btSendMessages.Location = new System.Drawing.Point(501, 3);
+            this.btSendMessages.Name = "btSendMessages";
+            this.btSendMessages.Size = new System.Drawing.Size(160, 51);
+            this.btSendMessages.TabIndex = 7;
+            this.btSendMessages.Text = "Send Messages";
+            this.btSendMessages.UseVisualStyleBackColor = true;
+            this.btSendMessages.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btViewBooks
+            // 
+            this.btViewBooks.Location = new System.Drawing.Point(335, 3);
+            this.btViewBooks.Name = "btViewBooks";
+            this.btViewBooks.Size = new System.Drawing.Size(160, 51);
+            this.btViewBooks.TabIndex = 6;
+            this.btViewBooks.Text = "View Books";
+            this.btViewBooks.UseVisualStyleBackColor = true;
+            // 
+            // btAttendanceReports
+            // 
+            this.btAttendanceReports.Location = new System.Drawing.Point(169, 3);
+            this.btAttendanceReports.Name = "btAttendanceReports";
+            this.btAttendanceReports.Size = new System.Drawing.Size(160, 51);
+            this.btAttendanceReports.TabIndex = 5;
+            this.btAttendanceReports.Text = "View Attendance Report";
+            this.btAttendanceReports.UseVisualStyleBackColor = true;
             // 
             // btLogout
             // 
@@ -89,15 +117,6 @@
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(169, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 51);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "View Attendance Report";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(585, 262);
@@ -106,24 +125,6 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(335, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(160, 51);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "View Books";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(501, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 51);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Send Messages";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -318,9 +319,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btSendMessages;
+        private System.Windows.Forms.Button btViewBooks;
+        private System.Windows.Forms.Button btAttendanceReports;
         private System.Windows.Forms.Button btLogout;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button button2;

@@ -86,6 +86,7 @@
             this.btnSendMessages.TabIndex = 21;
             this.btnSendMessages.Text = "Send Messages";
             this.btnSendMessages.UseVisualStyleBackColor = true;
+            this.btnSendMessages.Click += new System.EventHandler(this.btnSendMessages_Click);
             // 
             // btnViewAttendances
             // 
@@ -213,7 +214,7 @@
             this.bAddCourse.UseVisualStyleBackColor = true;
             this.bAddCourse.Click += new System.EventHandler(this.bAddCourse_Click);
             // 
-            // frmAdminAssignCourse
+            // frmAdminAddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -224,7 +225,7 @@
             this.Controls.Add(this.panel);
             this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmAdminAssignCourse";
+            this.Name = "frmAdminAddCourse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin - Add Course";
             this.panel.ResumeLayout(false);

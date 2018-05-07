@@ -17,11 +17,10 @@ namespace SMS_WcfService
         private string mobile_no;
         private string address;
         private Image picture;
-        private List<Message> inbox;
+        private List<Message> inbox = new List<Message>();
 
-        public void ReceiveMessage(Message msg) { 
-        
-            
+        public void ReceiveMessage(Message msg) {
+            inbox.Add(msg);
         }
         public string Name
         {

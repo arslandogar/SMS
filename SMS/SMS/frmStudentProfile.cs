@@ -36,5 +36,12 @@ namespace SMS
             temp.Show();
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmStudentSendMessages temp = new frmStudentSendMessages();
+            temp.Show();
+            this.Close();
+        }
     }
 }

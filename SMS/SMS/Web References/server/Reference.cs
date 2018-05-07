@@ -85,6 +85,24 @@ namespace SMS.server {
         
         private System.Threading.SendOrPostCallback sAssignCourseOperationCompleted;
         
+        private System.Threading.SendOrPostCallback sSendMessageToTeacherOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sSendMessageToParentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sSendMessageToAdminOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sSendMessageToStudentOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sGetParentInformationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sGetAdminInboxOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sGetTeacherInboxOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sGetStudentInboxOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback sGetParentInboxOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetDataUsingDataContractOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
@@ -208,6 +226,33 @@ namespace SMS.server {
         
         /// <remarks/>
         public event sAssignCourseCompletedEventHandler sAssignCourseCompleted;
+        
+        /// <remarks/>
+        public event sSendMessageToTeacherCompletedEventHandler sSendMessageToTeacherCompleted;
+        
+        /// <remarks/>
+        public event sSendMessageToParentCompletedEventHandler sSendMessageToParentCompleted;
+        
+        /// <remarks/>
+        public event sSendMessageToAdminCompletedEventHandler sSendMessageToAdminCompleted;
+        
+        /// <remarks/>
+        public event sSendMessageToStudentCompletedEventHandler sSendMessageToStudentCompleted;
+        
+        /// <remarks/>
+        public event sGetParentInformationCompletedEventHandler sGetParentInformationCompleted;
+        
+        /// <remarks/>
+        public event sGetAdminInboxCompletedEventHandler sGetAdminInboxCompleted;
+        
+        /// <remarks/>
+        public event sGetTeacherInboxCompletedEventHandler sGetTeacherInboxCompleted;
+        
+        /// <remarks/>
+        public event sGetStudentInboxCompletedEventHandler sGetStudentInboxCompleted;
+        
+        /// <remarks/>
+        public event sGetParentInboxCompletedEventHandler sGetParentInboxCompleted;
         
         /// <remarks/>
         public event GetDataUsingDataContractCompletedEventHandler GetDataUsingDataContractCompleted;
@@ -1105,6 +1150,277 @@ namespace SMS.server {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sSendMessageToTeacher", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sSendMessageToTeacher([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string message, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string sender, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string teacher_id) {
+            this.Invoke("sSendMessageToTeacher", new object[] {
+                        message,
+                        sender,
+                        teacher_id});
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToTeacherAsync(string message, string sender, string teacher_id) {
+            this.sSendMessageToTeacherAsync(message, sender, teacher_id, null);
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToTeacherAsync(string message, string sender, string teacher_id, object userState) {
+            if ((this.sSendMessageToTeacherOperationCompleted == null)) {
+                this.sSendMessageToTeacherOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsSendMessageToTeacherOperationCompleted);
+            }
+            this.InvokeAsync("sSendMessageToTeacher", new object[] {
+                        message,
+                        sender,
+                        teacher_id}, this.sSendMessageToTeacherOperationCompleted, userState);
+        }
+        
+        private void OnsSendMessageToTeacherOperationCompleted(object arg) {
+            if ((this.sSendMessageToTeacherCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sSendMessageToTeacherCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sSendMessageToParent", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sSendMessageToParent([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string message, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string sender, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string child_roll_no) {
+            this.Invoke("sSendMessageToParent", new object[] {
+                        message,
+                        sender,
+                        child_roll_no});
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToParentAsync(string message, string sender, string child_roll_no) {
+            this.sSendMessageToParentAsync(message, sender, child_roll_no, null);
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToParentAsync(string message, string sender, string child_roll_no, object userState) {
+            if ((this.sSendMessageToParentOperationCompleted == null)) {
+                this.sSendMessageToParentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsSendMessageToParentOperationCompleted);
+            }
+            this.InvokeAsync("sSendMessageToParent", new object[] {
+                        message,
+                        sender,
+                        child_roll_no}, this.sSendMessageToParentOperationCompleted, userState);
+        }
+        
+        private void OnsSendMessageToParentOperationCompleted(object arg) {
+            if ((this.sSendMessageToParentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sSendMessageToParentCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sSendMessageToAdmin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sSendMessageToAdmin([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string message, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string sender) {
+            this.Invoke("sSendMessageToAdmin", new object[] {
+                        message,
+                        sender});
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToAdminAsync(string message, string sender) {
+            this.sSendMessageToAdminAsync(message, sender, null);
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToAdminAsync(string message, string sender, object userState) {
+            if ((this.sSendMessageToAdminOperationCompleted == null)) {
+                this.sSendMessageToAdminOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsSendMessageToAdminOperationCompleted);
+            }
+            this.InvokeAsync("sSendMessageToAdmin", new object[] {
+                        message,
+                        sender}, this.sSendMessageToAdminOperationCompleted, userState);
+        }
+        
+        private void OnsSendMessageToAdminOperationCompleted(object arg) {
+            if ((this.sSendMessageToAdminCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sSendMessageToAdminCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sSendMessageToStudent", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void sSendMessageToStudent([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string message, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string sender, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string roll_no) {
+            this.Invoke("sSendMessageToStudent", new object[] {
+                        message,
+                        sender,
+                        roll_no});
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToStudentAsync(string message, string sender, string roll_no) {
+            this.sSendMessageToStudentAsync(message, sender, roll_no, null);
+        }
+        
+        /// <remarks/>
+        public void sSendMessageToStudentAsync(string message, string sender, string roll_no, object userState) {
+            if ((this.sSendMessageToStudentOperationCompleted == null)) {
+                this.sSendMessageToStudentOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsSendMessageToStudentOperationCompleted);
+            }
+            this.InvokeAsync("sSendMessageToStudent", new object[] {
+                        message,
+                        sender,
+                        roll_no}, this.sSendMessageToStudentOperationCompleted, userState);
+        }
+        
+        private void OnsSendMessageToStudentOperationCompleted(object arg) {
+            if ((this.sSendMessageToStudentCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sSendMessageToStudentCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sGetParentInformation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays")]
+        public string[] sGetParentInformation() {
+            object[] results = this.Invoke("sGetParentInformation", new object[0]);
+            return ((string[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sGetParentInformationAsync() {
+            this.sGetParentInformationAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sGetParentInformationAsync(object userState) {
+            if ((this.sGetParentInformationOperationCompleted == null)) {
+                this.sGetParentInformationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsGetParentInformationOperationCompleted);
+            }
+            this.InvokeAsync("sGetParentInformation", new object[0], this.sGetParentInformationOperationCompleted, userState);
+        }
+        
+        private void OnsGetParentInformationOperationCompleted(object arg) {
+            if ((this.sGetParentInformationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sGetParentInformationCompleted(this, new sGetParentInformationCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sGetAdminInbox", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Message[] sGetAdminInbox() {
+            object[] results = this.Invoke("sGetAdminInbox", new object[0]);
+            return ((Message[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sGetAdminInboxAsync() {
+            this.sGetAdminInboxAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sGetAdminInboxAsync(object userState) {
+            if ((this.sGetAdminInboxOperationCompleted == null)) {
+                this.sGetAdminInboxOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsGetAdminInboxOperationCompleted);
+            }
+            this.InvokeAsync("sGetAdminInbox", new object[0], this.sGetAdminInboxOperationCompleted, userState);
+        }
+        
+        private void OnsGetAdminInboxOperationCompleted(object arg) {
+            if ((this.sGetAdminInboxCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sGetAdminInboxCompleted(this, new sGetAdminInboxCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sGetTeacherInbox", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Message[] sGetTeacherInbox() {
+            object[] results = this.Invoke("sGetTeacherInbox", new object[0]);
+            return ((Message[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sGetTeacherInboxAsync() {
+            this.sGetTeacherInboxAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sGetTeacherInboxAsync(object userState) {
+            if ((this.sGetTeacherInboxOperationCompleted == null)) {
+                this.sGetTeacherInboxOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsGetTeacherInboxOperationCompleted);
+            }
+            this.InvokeAsync("sGetTeacherInbox", new object[0], this.sGetTeacherInboxOperationCompleted, userState);
+        }
+        
+        private void OnsGetTeacherInboxOperationCompleted(object arg) {
+            if ((this.sGetTeacherInboxCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sGetTeacherInboxCompleted(this, new sGetTeacherInboxCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sGetStudentInbox", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Message[] sGetStudentInbox() {
+            object[] results = this.Invoke("sGetStudentInbox", new object[0]);
+            return ((Message[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sGetStudentInboxAsync() {
+            this.sGetStudentInboxAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sGetStudentInboxAsync(object userState) {
+            if ((this.sGetStudentInboxOperationCompleted == null)) {
+                this.sGetStudentInboxOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsGetStudentInboxOperationCompleted);
+            }
+            this.InvokeAsync("sGetStudentInbox", new object[0], this.sGetStudentInboxOperationCompleted, userState);
+        }
+        
+        private void OnsGetStudentInboxOperationCompleted(object arg) {
+            if ((this.sGetStudentInboxCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sGetStudentInboxCompleted(this, new sGetStudentInboxCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/sGetParentInbox", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+        public Message[] sGetParentInbox() {
+            object[] results = this.Invoke("sGetParentInbox", new object[0]);
+            return ((Message[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void sGetParentInboxAsync() {
+            this.sGetParentInboxAsync(null);
+        }
+        
+        /// <remarks/>
+        public void sGetParentInboxAsync(object userState) {
+            if ((this.sGetParentInboxOperationCompleted == null)) {
+                this.sGetParentInboxOperationCompleted = new System.Threading.SendOrPostCallback(this.OnsGetParentInboxOperationCompleted);
+            }
+            this.InvokeAsync("sGetParentInbox", new object[0], this.sGetParentInboxOperationCompleted, userState);
+        }
+        
+        private void OnsGetParentInboxOperationCompleted(object arg) {
+            if ((this.sGetParentInboxCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.sGetParentInboxCompleted(this, new sGetParentInboxCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetDataUsingDataContract", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public CompositeType GetDataUsingDataContract([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CompositeType composite) {
@@ -1231,6 +1547,41 @@ namespace SMS.server {
             }
             set {
                 this.stringValueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/SMS_WcfService")]
+    public partial class Message {
+        
+        private string messageTextField;
+        
+        private string senderField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string MessageText {
+            get {
+                return this.messageTextField;
+            }
+            set {
+                this.messageTextField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Sender {
+            get {
+                return this.senderField;
+            }
+            set {
+                this.senderField = value;
             }
         }
     }
@@ -1877,6 +2228,152 @@ namespace SMS.server {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void sAssignCourseCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sSendMessageToTeacherCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sSendMessageToParentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sSendMessageToAdminCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sSendMessageToStudentCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sGetParentInformationCompletedEventHandler(object sender, sGetParentInformationCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sGetParentInformationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sGetParentInformationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sGetAdminInboxCompletedEventHandler(object sender, sGetAdminInboxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sGetAdminInboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sGetAdminInboxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Message[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Message[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sGetTeacherInboxCompletedEventHandler(object sender, sGetTeacherInboxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sGetTeacherInboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sGetTeacherInboxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Message[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Message[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sGetStudentInboxCompletedEventHandler(object sender, sGetStudentInboxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sGetStudentInboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sGetStudentInboxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Message[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Message[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void sGetParentInboxCompletedEventHandler(object sender, sGetParentInboxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class sGetParentInboxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal sGetParentInboxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Message[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Message[])(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]

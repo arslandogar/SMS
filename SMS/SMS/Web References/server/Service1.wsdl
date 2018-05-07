@@ -176,6 +176,60 @@
   <wsdl:message name="IService1_sAssignCourse_OutputMessage">
     <wsdl:part name="parameters" element="tns:sAssignCourseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToTeacher_InputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToTeacher" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToTeacher_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToTeacherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToParent_InputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToParent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToParent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToParentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToStudent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sSendMessageToStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sSendMessageToStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetParentInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetParentInformation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetParentInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetParentInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetAdminInbox_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetAdminInbox" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetAdminInbox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetAdminInboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetTeacherInbox_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetTeacherInbox" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetTeacherInbox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetTeacherInboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetStudentInbox_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetStudentInbox" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetStudentInbox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetStudentInboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetParentInbox_InputMessage">
+    <wsdl:part name="parameters" element="tns:sGetParentInbox" />
+  </wsdl:message>
+  <wsdl:message name="IService1_sGetParentInbox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sGetParentInboxResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -294,6 +348,42 @@
     <wsdl:operation name="sAssignCourse">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/sAssignCourse" message="tns:IService1_sAssignCourse_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/sAssignCourseResponse" message="tns:IService1_sAssignCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToTeacher">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sSendMessageToTeacher" message="tns:IService1_sSendMessageToTeacher_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sSendMessageToTeacherResponse" message="tns:IService1_sSendMessageToTeacher_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToParent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sSendMessageToParent" message="tns:IService1_sSendMessageToParent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sSendMessageToParentResponse" message="tns:IService1_sSendMessageToParent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sSendMessageToAdmin" message="tns:IService1_sSendMessageToAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sSendMessageToAdminResponse" message="tns:IService1_sSendMessageToAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sSendMessageToStudent" message="tns:IService1_sSendMessageToStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sSendMessageToStudentResponse" message="tns:IService1_sSendMessageToStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetParentInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetParentInformation" message="tns:IService1_sGetParentInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetParentInformationResponse" message="tns:IService1_sGetParentInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetAdminInbox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetAdminInbox" message="tns:IService1_sGetAdminInbox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetAdminInboxResponse" message="tns:IService1_sGetAdminInbox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetTeacherInbox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetTeacherInbox" message="tns:IService1_sGetTeacherInbox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetTeacherInboxResponse" message="tns:IService1_sGetTeacherInbox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetStudentInbox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetStudentInbox" message="tns:IService1_sGetStudentInbox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetStudentInboxResponse" message="tns:IService1_sGetStudentInbox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sGetParentInbox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/sGetParentInbox" message="tns:IService1_sGetParentInbox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/sGetParentInboxResponse" message="tns:IService1_sGetParentInbox_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
@@ -547,6 +637,87 @@
     </wsdl:operation>
     <wsdl:operation name="sAssignCourse">
       <soap:operation soapAction="http://tempuri.org/IService1/sAssignCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToTeacher">
+      <soap:operation soapAction="http://tempuri.org/IService1/sSendMessageToTeacher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToParent">
+      <soap:operation soapAction="http://tempuri.org/IService1/sSendMessageToParent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToAdmin">
+      <soap:operation soapAction="http://tempuri.org/IService1/sSendMessageToAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sSendMessageToStudent">
+      <soap:operation soapAction="http://tempuri.org/IService1/sSendMessageToStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetParentInformation">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetParentInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetAdminInbox">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetAdminInbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetTeacherInbox">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetTeacherInbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetStudentInbox">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetStudentInbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sGetParentInbox">
+      <soap:operation soapAction="http://tempuri.org/IService1/sGetParentInbox" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -43,3 +43,5 @@ E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAddTeacher.resourc
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherLogin.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmTeacherProfile.resources
 E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminAssignCourse.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmAdminSendMessages.resources
+E:\School Management System\SMS\SMS\SMS\obj\Debug\SMS.frmStudentSendMessages.resources

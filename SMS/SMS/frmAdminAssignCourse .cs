@@ -98,5 +98,12 @@ namespace SMS
             cmbSelectCourse.Text = "Select Course";
             cmbSelectTeacher.Text = "Select Teacher";
         }
+
+        private void btnSendMessages_Click(object sender, EventArgs e)
+        {
+            frmAdminSendMessages temp = new frmAdminSendMessages();
+            temp.Show();
+            this.Close();
+        }
     }
 }

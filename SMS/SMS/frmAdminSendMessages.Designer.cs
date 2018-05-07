@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class frmAdminAssignCourse
+    partial class frmAdminSendMessages
     {
         /// <summary>
         /// Required designer variable.
@@ -41,10 +41,22 @@
             this.btnMarkAttendance = new System.Windows.Forms.Button();
             this.btnViewStudents = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.cmbSelectCourse = new System.Windows.Forms.ComboBox();
+            this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.cmbSelectTeacher = new System.Windows.Forms.ComboBox();
-            this.btAssign = new System.Windows.Forms.Button();
+            this.btSendToTeacher = new System.Windows.Forms.Button();
+            this.llbReadMessages = new System.Windows.Forms.LinkLabel();
+            this.cmbSelectStudent = new System.Windows.Forms.ComboBox();
+            this.cmbSelectParent = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panelInbox = new System.Windows.Forms.Panel();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.btSendToStudent = new System.Windows.Forms.Button();
+            this.btSendToParent = new System.Windows.Forms.Button();
             this.panel.SuspendLayout();
+            this.panelInbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -80,13 +92,13 @@
             // 
             // btnSendMessages
             // 
+            this.btnSendMessages.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSendMessages.Location = new System.Drawing.Point(3, 422);
             this.btnSendMessages.Name = "btnSendMessages";
             this.btnSendMessages.Size = new System.Drawing.Size(192, 35);
             this.btnSendMessages.TabIndex = 21;
             this.btnSendMessages.Text = "Send Messages";
-            this.btnSendMessages.UseVisualStyleBackColor = true;
-            this.btnSendMessages.Click += new System.EventHandler(this.btnSendMessages_Click);
+            this.btnSendMessages.UseVisualStyleBackColor = false;
             // 
             // btnViewAttendances
             // 
@@ -121,17 +133,16 @@
             // 
             // btnAssignCourse
             // 
-            this.btnAssignCourse.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnAssignCourse.Location = new System.Drawing.Point(3, 217);
             this.btnAssignCourse.Name = "btnAssignCourse";
             this.btnAssignCourse.Size = new System.Drawing.Size(192, 35);
             this.btnAssignCourse.TabIndex = 16;
             this.btnAssignCourse.Text = "Assign Course";
-            this.btnAssignCourse.UseVisualStyleBackColor = false;
+            this.btnAssignCourse.UseVisualStyleBackColor = true;
+            this.btnAssignCourse.Click += new System.EventHandler(this.btnAssignCourse_Click);
             // 
             // btnAddCourse
             // 
-            this.btnAddCourse.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCourse.Location = new System.Drawing.Point(3, 176);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(192, 35);
@@ -189,49 +200,152 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // cmbSelectCourse
+            // richTextBox
             // 
-            this.cmbSelectCourse.FormattingEnabled = true;
-            this.cmbSelectCourse.Location = new System.Drawing.Point(497, 126);
-            this.cmbSelectCourse.Name = "cmbSelectCourse";
-            this.cmbSelectCourse.Size = new System.Drawing.Size(121, 21);
-            this.cmbSelectCourse.TabIndex = 4;
+            this.richTextBox.Location = new System.Drawing.Point(264, 34);
+            this.richTextBox.Name = "richTextBox";
+            this.richTextBox.Size = new System.Drawing.Size(172, 96);
+            this.richTextBox.TabIndex = 8;
+            this.richTextBox.Text = "";
             // 
             // cmbSelectTeacher
             // 
             this.cmbSelectTeacher.FormattingEnabled = true;
-            this.cmbSelectTeacher.Location = new System.Drawing.Point(497, 177);
+            this.cmbSelectTeacher.Location = new System.Drawing.Point(264, 174);
             this.cmbSelectTeacher.Name = "cmbSelectTeacher";
-            this.cmbSelectTeacher.Size = new System.Drawing.Size(121, 21);
-            this.cmbSelectTeacher.TabIndex = 5;
+            this.cmbSelectTeacher.Size = new System.Drawing.Size(106, 21);
+            this.cmbSelectTeacher.TabIndex = 9;
             // 
-            // btAssign
+            // btSendToTeacher
             // 
-            this.btAssign.Location = new System.Drawing.Point(521, 218);
-            this.btAssign.Name = "btAssign";
-            this.btAssign.Size = new System.Drawing.Size(75, 23);
-            this.btAssign.TabIndex = 6;
-            this.btAssign.Text = "Assign";
-            this.btAssign.UseVisualStyleBackColor = true;
-            this.btAssign.Click += new System.EventHandler(this.btAssign_Click);
+            this.btSendToTeacher.Location = new System.Drawing.Point(279, 201);
+            this.btSendToTeacher.Name = "btSendToTeacher";
+            this.btSendToTeacher.Size = new System.Drawing.Size(75, 23);
+            this.btSendToTeacher.TabIndex = 10;
+            this.btSendToTeacher.Text = "Send";
+            this.btSendToTeacher.UseVisualStyleBackColor = true;
+            this.btSendToTeacher.Click += new System.EventHandler(this.btSend_Click);
             // 
-            // frmAdminAssignCourse
+            // llbReadMessages
+            // 
+            this.llbReadMessages.AutoSize = true;
+            this.llbReadMessages.Location = new System.Drawing.Point(738, 489);
+            this.llbReadMessages.Name = "llbReadMessages";
+            this.llbReadMessages.Size = new System.Drawing.Size(84, 13);
+            this.llbReadMessages.TabIndex = 11;
+            this.llbReadMessages.TabStop = true;
+            this.llbReadMessages.Text = "Read Messages";
+            this.llbReadMessages.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbReadMessages_LinkClicked);
+            // 
+            // cmbSelectStudent
+            // 
+            this.cmbSelectStudent.FormattingEnabled = true;
+            this.cmbSelectStudent.Location = new System.Drawing.Point(432, 174);
+            this.cmbSelectStudent.Name = "cmbSelectStudent";
+            this.cmbSelectStudent.Size = new System.Drawing.Size(121, 21);
+            this.cmbSelectStudent.TabIndex = 12;
+            // 
+            // cmbSelectParent
+            // 
+            this.cmbSelectParent.FormattingEnabled = true;
+            this.cmbSelectParent.Location = new System.Drawing.Point(596, 174);
+            this.cmbSelectParent.Name = "cmbSelectParent";
+            this.cmbSelectParent.Size = new System.Drawing.Size(121, 21);
+            this.cmbSelectParent.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(261, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Message a Teacher:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(429, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Message a Student:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(593, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Message a Parent:";
+            // 
+            // panelInbox
+            // 
+            this.panelInbox.Controls.Add(this.dataGridView);
+            this.panelInbox.Location = new System.Drawing.Point(230, 259);
+            this.panelInbox.Name = "panelInbox";
+            this.panelInbox.Size = new System.Drawing.Size(592, 227);
+            this.panelInbox.TabIndex = 17;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(17, 8);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.Size = new System.Drawing.Size(558, 205);
+            this.dataGridView.TabIndex = 0;
+            // 
+            // btSendToStudent
+            // 
+            this.btSendToStudent.Location = new System.Drawing.Point(456, 201);
+            this.btSendToStudent.Name = "btSendToStudent";
+            this.btSendToStudent.Size = new System.Drawing.Size(75, 23);
+            this.btSendToStudent.TabIndex = 18;
+            this.btSendToStudent.Text = "Send";
+            this.btSendToStudent.UseVisualStyleBackColor = true;
+            this.btSendToStudent.Click += new System.EventHandler(this.btSendToStudent_Click);
+            // 
+            // btSendToParent
+            // 
+            this.btSendToParent.Location = new System.Drawing.Point(614, 201);
+            this.btSendToParent.Name = "btSendToParent";
+            this.btSendToParent.Size = new System.Drawing.Size(75, 23);
+            this.btSendToParent.TabIndex = 19;
+            this.btSendToParent.Text = "Send";
+            this.btSendToParent.UseVisualStyleBackColor = true;
+            this.btSendToParent.Click += new System.EventHandler(this.btSendToParent_Click);
+            // 
+            // frmAdminSendMessages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 511);
-            this.Controls.Add(this.btAssign);
+            this.Controls.Add(this.btSendToParent);
+            this.Controls.Add(this.btSendToStudent);
+            this.Controls.Add(this.panelInbox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbSelectParent);
+            this.Controls.Add(this.cmbSelectStudent);
+            this.Controls.Add(this.llbReadMessages);
+            this.Controls.Add(this.btSendToTeacher);
             this.Controls.Add(this.cmbSelectTeacher);
-            this.Controls.Add(this.cmbSelectCourse);
+            this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.panel);
             this.Icon = global::SMS.Properties.Resources.icon;
             this.MaximizeBox = false;
-            this.Name = "frmAdminAssignCourse";
+            this.Name = "frmAdminSendMessages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin - Assign Course";
-            this.Load += new System.EventHandler(this.frmAdminAssignCourse_Load);
+            this.Text = "Admin - Send Messages";
+            this.Load += new System.EventHandler(this.frmAdminSendMessages_Load);
             this.panel.ResumeLayout(false);
+            this.panelInbox.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -250,8 +364,18 @@
         private System.Windows.Forms.Button btnViewTeachers;
         private System.Windows.Forms.Button btnAddTeacher;
         private System.Windows.Forms.Button btnMarkAttendance;
-        private System.Windows.Forms.ComboBox cmbSelectCourse;
+        private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.ComboBox cmbSelectTeacher;
-        private System.Windows.Forms.Button btAssign;
+        private System.Windows.Forms.Button btSendToTeacher;
+        private System.Windows.Forms.LinkLabel llbReadMessages;
+        private System.Windows.Forms.ComboBox cmbSelectStudent;
+        private System.Windows.Forms.ComboBox cmbSelectParent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelInbox;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button btSendToStudent;
+        private System.Windows.Forms.Button btSendToParent;
     }
 }

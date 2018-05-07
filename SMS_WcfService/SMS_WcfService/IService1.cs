@@ -98,6 +98,33 @@ namespace SMS_WcfService
         void sAssignCourse(string teacher_id, string course_name);
 
         [OperationContract]
+        void sSendMessageToTeacher(string message, string sender, string teacher_id);
+
+        [OperationContract]
+        void sSendMessageToParent(string message, string sender, string child_roll_no);
+
+        [OperationContract]
+        void sSendMessageToAdmin(string message, string sender);
+
+        [OperationContract]
+        void sSendMessageToStudent(string message, string sender, string roll_no);
+
+        [OperationContract]
+        List<string> sGetParentInformation();
+
+        [OperationContract]
+        List<Message> sGetAdminInbox();
+
+        [OperationContract]
+        List<Message> sGetTeacherInbox();
+
+        [OperationContract]
+        List<Message> sGetStudentInbox();
+
+        [OperationContract]
+        List<Message> sGetParentInbox();
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here

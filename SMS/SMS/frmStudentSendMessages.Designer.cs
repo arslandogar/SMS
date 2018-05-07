@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class frmParentMain
+    partial class frmStudentSendMessages
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
+            this.btSendMessages = new System.Windows.Forms.Button();
+            this.btViewBooks = new System.Windows.Forms.Button();
+            this.btAttendanceReports = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
-            this.btNotifications = new System.Windows.Forms.Button();
-            this.btViewReport = new System.Windows.Forms.Button();
-            this.btnMain = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.cmbSelectTeacher = new System.Windows.Forms.ComboBox();
             this.btSend = new System.Windows.Forms.Button();
@@ -47,75 +48,86 @@
             // panel
             // 
             this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel.Controls.Add(this.btSendMessages);
+            this.panel.Controls.Add(this.btViewBooks);
+            this.panel.Controls.Add(this.btAttendanceReports);
             this.panel.Controls.Add(this.btLogout);
-            this.panel.Controls.Add(this.btNotifications);
-            this.panel.Controls.Add(this.btViewReport);
-            this.panel.Controls.Add(this.btnMain);
-            this.panel.Location = new System.Drawing.Point(1, 0);
+            this.panel.Controls.Add(this.btnProfile);
+            this.panel.Location = new System.Drawing.Point(0, 1);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(832, 59);
-            this.panel.TabIndex = 6;
+            this.panel.TabIndex = 7;
+            // 
+            // btSendMessages
+            // 
+            this.btSendMessages.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btSendMessages.Location = new System.Drawing.Point(501, 3);
+            this.btSendMessages.Name = "btSendMessages";
+            this.btSendMessages.Size = new System.Drawing.Size(160, 51);
+            this.btSendMessages.TabIndex = 7;
+            this.btSendMessages.Text = "Send Messages";
+            this.btSendMessages.UseVisualStyleBackColor = false;
+            // 
+            // btViewBooks
+            // 
+            this.btViewBooks.Location = new System.Drawing.Point(335, 3);
+            this.btViewBooks.Name = "btViewBooks";
+            this.btViewBooks.Size = new System.Drawing.Size(160, 51);
+            this.btViewBooks.TabIndex = 6;
+            this.btViewBooks.Text = "View Books";
+            this.btViewBooks.UseVisualStyleBackColor = true;
+            // 
+            // btAttendanceReports
+            // 
+            this.btAttendanceReports.Location = new System.Drawing.Point(169, 3);
+            this.btAttendanceReports.Name = "btAttendanceReports";
+            this.btAttendanceReports.Size = new System.Drawing.Size(160, 51);
+            this.btAttendanceReports.TabIndex = 5;
+            this.btAttendanceReports.Text = "View Attendance Report";
+            this.btAttendanceReports.UseVisualStyleBackColor = true;
             // 
             // btLogout
             // 
-            this.btLogout.Location = new System.Drawing.Point(625, 3);
+            this.btLogout.Location = new System.Drawing.Point(667, 3);
             this.btLogout.Name = "btLogout";
-            this.btLogout.Size = new System.Drawing.Size(202, 51);
+            this.btLogout.Size = new System.Drawing.Size(160, 51);
             this.btLogout.TabIndex = 3;
             this.btLogout.Text = "Logout";
             this.btLogout.UseVisualStyleBackColor = true;
             this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
-            // btNotifications
+            // btnProfile
             // 
-            this.btNotifications.Location = new System.Drawing.Point(419, 3);
-            this.btNotifications.Name = "btNotifications";
-            this.btNotifications.Size = new System.Drawing.Size(202, 51);
-            this.btNotifications.TabIndex = 2;
-            this.btNotifications.Text = "Notifications";
-            this.btNotifications.UseVisualStyleBackColor = true;
-            // 
-            // btViewReport
-            // 
-            this.btViewReport.Location = new System.Drawing.Point(211, 3);
-            this.btViewReport.Name = "btViewReport";
-            this.btViewReport.Size = new System.Drawing.Size(202, 51);
-            this.btViewReport.TabIndex = 1;
-            this.btViewReport.Text = "View Attendance Report";
-            this.btViewReport.UseVisualStyleBackColor = true;
-            // 
-            // btnMain
-            // 
-            this.btnMain.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMain.Location = new System.Drawing.Point(3, 3);
-            this.btnMain.Name = "btnMain";
-            this.btnMain.Size = new System.Drawing.Size(202, 51);
-            this.btnMain.TabIndex = 0;
-            this.btnMain.Text = "Main";
-            this.btnMain.UseVisualStyleBackColor = false;
+            this.btnProfile.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProfile.Location = new System.Drawing.Point(3, 3);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(160, 51);
+            this.btnProfile.TabIndex = 0;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
             // 
             // richTextBox
             // 
-            this.richTextBox.Location = new System.Drawing.Point(73, 157);
+            this.richTextBox.Location = new System.Drawing.Point(106, 160);
             this.richTextBox.Name = "richTextBox";
             this.richTextBox.Size = new System.Drawing.Size(172, 96);
-            this.richTextBox.TabIndex = 7;
+            this.richTextBox.TabIndex = 8;
             this.richTextBox.Text = "";
             // 
             // cmbSelectTeacher
             // 
             this.cmbSelectTeacher.FormattingEnabled = true;
-            this.cmbSelectTeacher.Location = new System.Drawing.Point(73, 276);
+            this.cmbSelectTeacher.Location = new System.Drawing.Point(106, 286);
             this.cmbSelectTeacher.Name = "cmbSelectTeacher";
             this.cmbSelectTeacher.Size = new System.Drawing.Size(121, 21);
-            this.cmbSelectTeacher.TabIndex = 8;
+            this.cmbSelectTeacher.TabIndex = 9;
             // 
             // btSend
             // 
-            this.btSend.Location = new System.Drawing.Point(73, 320);
+            this.btSend.Location = new System.Drawing.Point(106, 339);
             this.btSend.Name = "btSend";
             this.btSend.Size = new System.Drawing.Size(75, 23);
-            this.btSend.TabIndex = 9;
+            this.btSend.TabIndex = 10;
             this.btSend.Text = "Send";
             this.btSend.UseVisualStyleBackColor = true;
             this.btSend.Click += new System.EventHandler(this.btSend_Click);
@@ -126,7 +138,7 @@
             this.llbReadMessages.Location = new System.Drawing.Point(738, 489);
             this.llbReadMessages.Name = "llbReadMessages";
             this.llbReadMessages.Size = new System.Drawing.Size(84, 13);
-            this.llbReadMessages.TabIndex = 10;
+            this.llbReadMessages.TabIndex = 11;
             this.llbReadMessages.TabStop = true;
             this.llbReadMessages.Text = "Read Messages";
             this.llbReadMessages.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbReadMessages_LinkClicked);
@@ -134,10 +146,10 @@
             // panelInbox
             // 
             this.panelInbox.Controls.Add(this.dataGridView);
-            this.panelInbox.Location = new System.Drawing.Point(369, 222);
+            this.panelInbox.Location = new System.Drawing.Point(360, 226);
             this.panelInbox.Name = "panelInbox";
             this.panelInbox.Size = new System.Drawing.Size(453, 245);
-            this.panelInbox.TabIndex = 19;
+            this.panelInbox.TabIndex = 18;
             // 
             // dataGridView
             // 
@@ -148,7 +160,7 @@
             this.dataGridView.Size = new System.Drawing.Size(420, 222);
             this.dataGridView.TabIndex = 0;
             // 
-            // frmParentMain
+            // frmStudentSendMessages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,9 +171,12 @@
             this.Controls.Add(this.cmbSelectTeacher);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.panel);
-            this.Name = "frmParentMain";
-            this.Text = "Parent - Main";
-            this.Load += new System.EventHandler(this.frmParentMain_Load);
+            this.Icon = global::SMS.Properties.Resources.icon;
+            this.MaximizeBox = false;
+            this.Name = "frmStudentSendMessages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Student - Send Messages";
+            this.Load += new System.EventHandler(this.frmStudentSendMessages_Load);
             this.panel.ResumeLayout(false);
             this.panelInbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
@@ -173,10 +188,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Button btnMain;
+        private System.Windows.Forms.Button btSendMessages;
+        private System.Windows.Forms.Button btViewBooks;
+        private System.Windows.Forms.Button btAttendanceReports;
         private System.Windows.Forms.Button btLogout;
-        private System.Windows.Forms.Button btNotifications;
-        private System.Windows.Forms.Button btViewReport;
+        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.ComboBox cmbSelectTeacher;
         private System.Windows.Forms.Button btSend;

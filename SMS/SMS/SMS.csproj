@@ -63,6 +63,12 @@
     <Compile Include="frmAdminAddTeacher.Designer.cs">
       <DependentUpon>frmAdminAddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdminSendMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminSendMessages.Designer.cs">
+      <DependentUpon>frmAdminSendMessages.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdminViewCourses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="frmAdminAddStudent.Designer.cs">
       <DependentUpon>frmAdminAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentSendMessages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentSendMessages.Designer.cs">
+      <DependentUpon>frmStudentSendMessages.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTeacherProfile.cs">
       <SubType>Form</SubType>
@@ -179,6 +191,9 @@
     <EmbeddedResource Include="frmAdminAddTeacher.resx">
       <DependentUpon>frmAdminAddTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminSendMessages.resx">
+      <DependentUpon>frmAdminSendMessages.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdminViewCourses.resx">
       <DependentUpon>frmAdminViewCourses.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminAddStudent.resx">
       <DependentUpon>frmAdminAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentSendMessages.resx">
+      <DependentUpon>frmStudentSendMessages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTeacherProfile.resx">
       <DependentUpon>frmTeacherProfile.cs</DependentUpon>
@@ -257,6 +275,9 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\server\CompositeType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\server\Message.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\server\Reference.map">

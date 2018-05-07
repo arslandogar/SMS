@@ -10,47 +10,31 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class frmParentMain : Form
+    public partial class frmStudentSendMessages : Form
     {
-        public frmParentMain()
+        public frmStudentSendMessages()
         {
             InitializeComponent();
-        }
-
-        private void reset()
-        {
-            server.Service1 ser = new server.Service1();
-            BindingSource id_source = new BindingSource();
-            BindingSource rollNo_source = new BindingSource();
-            BindingSource inbox = new BindingSource();
-            id_source.DataSource = ser.sViewTeacherNames();
-            rollNo_source.DataSource = ser.sViewRollNumbers();
-            dataGridView.DataSource = inbox;
-            inbox.DataSource = ser.sGetParentInbox();
-            cmbSelectTeacher.DataSource = id_source;
-            cmbSelectTeacher.Text = "Select Teacher";
-            richTextBox.Text = "Type Your Message..";
-        }
-
-        private void frmParentMain_Load(object sender, EventArgs e)
-        {
-            panelInbox.Hide();
-            reset();
         }
 
         private void btLogout_Click(object sender, EventArgs e)
         {
             frmMain temp = frmMain.getInstance();
             temp.Show();
-            this.Close(); 
+            this.Close();
         }
 
-        private void btSend_Click(object sender, EventArgs e)
+        private void reset()
         {
             server.Service1 ser = new server.Service1();
-            int i = cmbSelectTeacher.Text.IndexOf(':');
-            string t = cmbSelectTeacher.Text.Substring(0, i);
-            ser.sSendMessageToTeacher(richTextBox.Text, ser.sGetParentInformation()[0], t);
+            BindingSource id_source = new BindingSource();
+            BindingSource inbox = new BindingSource();
+            id_source.DataSource = ser.sViewTeacherNames();
+            dataGridView.DataSource = inbox;
+            inbox.DataSource = ser.sGetStudentInbox();
+            cmbSelectTeacher.DataSource = id_source;
+            cmbSelectTeacher.Text = "Select Teacher";
+            richTextBox.Text = "Type Your Message..";
         }
 
         private void llbReadMessages_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -65,6 +49,20 @@ namespace SMS
                 panelInbox.Hide();
                 llbReadMessages.Text = "Read Messages";
             }
+        }
+
+        private void frmStudentSendMessages_Load(object sender, EventArgs e)
+        {
+            panelInbox.Hide();
+            reset();
+        }
+
+        private void btSend_Click(object sender, EventArgs e)
+        {
+            server.Service1 ser = new server.Service1();
+            int i = cmbSelectTeacher.Text.IndexOf(':');
+            string t = cmbSelectTeacher.Text.Substring(0, i);
+            ser.sSendMessageToTeacher(richTextBox.Text, ser.sGetStudentInformation()[0], t);
         }
     }
 }

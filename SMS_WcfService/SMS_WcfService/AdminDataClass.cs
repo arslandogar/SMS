@@ -15,7 +15,6 @@ namespace SMS_WcfService
         {
             admin.Name = "Admin";
             admin.Username = "admin";
-            admin.Password = "123";
             admin.Cnic = "1234567891012";
             admin.Address = " ";
             admin.Email = "admin@gmail.com";

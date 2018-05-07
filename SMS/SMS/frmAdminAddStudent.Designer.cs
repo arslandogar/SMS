@@ -112,6 +112,7 @@
             this.btnSendMessages.TabIndex = 25;
             this.btnSendMessages.Text = "Send Messages";
             this.btnSendMessages.UseVisualStyleBackColor = true;
+            this.btnSendMessages.Click += new System.EventHandler(this.btnSendMessages_Click);
             // 
             // btnViewAttendances
             // 
